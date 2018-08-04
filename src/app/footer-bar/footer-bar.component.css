@@ -4,11 +4,18 @@
    
 }
 #footer{
-    position: sticky;
+   
     bottom: 0;
     width: 100%;
     text-align: center;
      color:black;
     font-weight: 900;
-    display:inline-block;
+    
+
+
+     position:absolute;
+   bottom:0;
+   
+     /* Height of the footer */
+   
 }

@@ -6,7 +6,7 @@ font-weight:900;
 #welcomeDiv{
     float:left;
     background-color:white;
-    width: 800px;
+    width: 500px;
     height:auto;
     margin:15px;
     display:inline-block;
@@ -21,10 +21,38 @@ font-weight:900;
 #pictures{
     display:inline-block;
     margin: 18px;
+    position:relative;
 }
 
 #picture1{
     border-radius:34px;
     border-style:solid;
     border-color:black;
+    display:inline-block;
+    position:relative;
+    
+}
+
+#picture2{
+    border-radius:34px;
+    border-style:solid;
+    border-color:black;
+    display:inline-block;
+    margin: 0px 10px;
+}
+
+#picture3{
+    border-radius:34px;
+    border-style:solid;
+    border-color:black;
+    display:inline-block;
+    position:relative;
+}
+
+#picture4{
+    border-radius:34px;
+    border-style:solid;
+    border-color:black;
+    position:relative;
+    margin: 10px 10px;
 }
