@@ -1,0 +1,14 @@
+#p{
+    color:black;
+    font-weight: 900;
+   
+}
+#footer{
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+     color:black;
+    font-weight: 900;
+    display:inline-block;
+}

@@ -1,0 +1,30 @@
+h4{
+font-weight:900;
+} 
+
+
+#welcomeDiv{
+    float:left;
+    background-color:white;
+    width: 800px;
+    height:auto;
+    margin:15px;
+    display:inline-block;
+ 
+}
+
+#title{
+    font-weight:900;
+    font-size: 2em;
+}
+
+#pictures{
+    display:inline-block;
+    margin: 18px;
+}
+
+#picture1{
+    border-radius:34px;
+    border-style:solid;
+    border-color:black;
+}

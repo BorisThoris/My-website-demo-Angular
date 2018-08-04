@@ -1,0 +1,49 @@
+#navbarColor01{
+    background-color:green;
+}   
+
+#profilePic{
+   float: right;
+   
+}
+#profilePic:hover{
+    color: red;
+    
+}
+#ProfilePicImage{
+    border-radius: 30%;
+    border-style:solid;
+}
+
+#ProfilePicImage:hover{
+transform: scale(1.22);
+}
+
+.nav-item:hover{
+    transform: scale(1.22); 
+    
+   
+}
+
+.nav-item{
+    font-size: 18px;
+    
+}
+
+#brand{
+    font-size: 40px;
+    color:green;
+    font-weight:900;
+    text-shadow: 2px 2px black;
+    
+}
+
+#brand:hover{
+    
+    transform: scale(1.22);
+}
+
+#seperator{
+    font-size:40px;
+    float:right;
+}
