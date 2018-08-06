@@ -17,6 +17,10 @@
     height:400px;
 }
 
+#searchOptions{
+    height:auto;
+}
+
 #viewAllForm{
     
 }
@@ -52,4 +56,23 @@ transform: scale(1.13);
 
 #name{
     font-weight:900;
+}
+
+
+#pageInfo{
+color:black;
+background-color:none;
+font-weight:900;
+text-align: center;
+
+    
+
+}
+
+#breed{
+  font-weight:700;  
+}
+
+#age{
+  font-weight:650;
 }

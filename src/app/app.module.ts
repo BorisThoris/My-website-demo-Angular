@@ -17,6 +17,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AboutComponent } from './about/about.component';
 import { MessagesComponent } from './messages/messages.component';
 import { PictureSliderComponent } from './picture-slider/picture-slider.component';
+import { SearchOptionsComponent } from './search-options/search-options.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { PictureSliderComponent } from './picture-slider/picture-slider.componen
     AdminComponent,
     AboutComponent,
     MessagesComponent,
-    PictureSliderComponent
+    PictureSliderComponent,
+    SearchOptionsComponent
   ],
   imports: [
     BrowserModule,

@@ -26,12 +26,12 @@ transform: scale(1.22);
 }
 
 .nav-item{
-    font-size: 18px;
+    font-size: 23px;
     
 }
 
 #brand{
-    font-size: 40px;
+    font-size: 50px;
     color:green;
     font-weight:900;
     text-shadow: 2px 2px black;
@@ -40,10 +40,14 @@ transform: scale(1.22);
 
 #brand:hover{
     
-    transform: scale(1.22);
+    transform: scale(1.16);
 }
 
 #seperator{
     font-size:40px;
     float:right;
+}
+
+#navBar{
+    margin: 10px 20px;
 }
