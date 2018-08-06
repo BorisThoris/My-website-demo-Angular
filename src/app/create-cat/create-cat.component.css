@@ -2,7 +2,7 @@
 position:relative;
 height:auto;
 width:400px;
-margin: 15px 200px;
+margin: 15px 150px;
 display:inline-block;
 
 
@@ -23,7 +23,8 @@ display:inline-block;
 #imagePreview2{
     border-style:solid;
     border-radius:5%;
-    background-color:transparent;
+    background-color:white;
+    padding: 10px;
 }
 
 
@@ -64,7 +65,7 @@ display:inline-block;
 
 #buttonCreatePost:hover{
 transform: scale(1.22);
-border-color: yellow;
+
   outline: 0;
   -webkit-box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);

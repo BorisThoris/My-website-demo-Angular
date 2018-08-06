@@ -8,13 +8,11 @@
     bottom: 0;
     width: 100%;
     text-align: center;
-     color:black;
+    color:black;
     font-weight: 900;
+    position:fixed;
+    font-size:40px;
     
-
-
-     position:absolute;
-   bottom:0;
    
      /* Height of the footer */
    
