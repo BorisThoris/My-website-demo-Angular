@@ -20,7 +20,7 @@ import { MessagesComponent } from './messages/messages.component'
 
 //Routes
 const routes : Routes = [
-    {path:'', pathMatch:"full", redirectTo: 'home'},
+    {path:'', pathMatch:"full", redirectTo: 'about'},
     {path: 'home', component: HomeComponent},
   { path: 'signin', component: SignInComponent },
   { path: 'login', component: LogInComponent },

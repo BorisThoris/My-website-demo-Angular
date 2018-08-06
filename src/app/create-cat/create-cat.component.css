@@ -1,0 +1,78 @@
+.card{
+position:relative;
+height:auto;
+width:400px;
+margin: 15px 200px;
+display:inline-block;
+
+
+}  
+
+#catPiture{
+    
+    height:500px;
+    width:500px;
+    float:right;
+    margin: 70px 150px;
+    position:relative;
+    display:inline-block;
+    position:relative;
+    border-radius:5%;
+}
+
+#imagePreview2{
+    border-style:solid;
+    border-radius:5%;
+    background-color:transparent;
+}
+
+
+#age{
+    
+    width:130px;
+    margin:auto;
+    display:inline-block;
+    float:left;
+}
+
+#number{
+    
+    width:130px;
+    margin:auto;
+    display:inline-block;
+    float:left;
+
+}
+
+
+#description{
+  width:180px;
+    
+  float:right;
+  
+}
+
+#desciption2{
+    height:135px;
+    resize: none;
+}
+
+#buttonCreatePost{
+    background-color:green;
+    margin: 0px 50px;
+}
+
+#buttonCreatePost:hover{
+transform: scale(1.22);
+border-color: yellow;
+  outline: 0;
+  -webkit-box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+
+
+#imgUrl2{
+    margin: auto 50px;
+}
+

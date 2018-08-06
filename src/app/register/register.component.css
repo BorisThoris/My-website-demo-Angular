@@ -1,0 +1,21 @@
+#registerForm{
+    width:450px;
+    margin: auto;
+    
+   
+    padding: 10px;
+}
+
+#buttonLogIn:hover{
+transform: scale(1.22);
+border-color: yellow;
+  outline: 0;
+  -webkit-box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+#buttonLogIn{
+    background-color:green;
+    
+}
+
