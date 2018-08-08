@@ -18,6 +18,8 @@ import { AboutComponent } from './about/about.component';
 import { MessagesComponent } from './messages/messages.component';
 import { PictureSliderComponent } from './picture-slider/picture-slider.component';
 import { SearchOptionsComponent } from './search-options/search-options.component';
+import { UserProfileCardComponent } from './user-profile-card/user-profile-card.component';
+import { MessageTemplateComponent } from './message-template/message-template.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { SearchOptionsComponent } from './search-options/search-options.componen
     AboutComponent,
     MessagesComponent,
     PictureSliderComponent,
-    SearchOptionsComponent
+    SearchOptionsComponent,
+    UserProfileCardComponent,
+    MessageTemplateComponent
   ],
   imports: [
     BrowserModule,

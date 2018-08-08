@@ -27,7 +27,13 @@ html,body
     position:fixed;
     font-size:40px; 
     
-   
+background:white;
+opacity: 0.1;
+     /* Height of the footer */
+}
+#footer:hover{
+ 
+opacity: 0.8;
      /* Height of the footer */
 }
 
