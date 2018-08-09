@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NaivagtionBarComponent } from './naivagtion-bar/naivagtion-bar.component';
 import { FooterBarComponent } from './footer-bar/footer-bar.component';
@@ -39,12 +39,14 @@ import { MessageTemplateComponent } from './message-template/message-template.co
     PictureSliderComponent,
     SearchOptionsComponent,
     UserProfileCardComponent,
-    MessageTemplateComponent
+    MessageTemplateComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

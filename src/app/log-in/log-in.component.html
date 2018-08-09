@@ -2,24 +2,24 @@
   <div id="logInForm">
     <form>
       <fieldset>
-        
+      <form #form="ngForm">
         <div class="card" id="loginCard">
               <div class="form-group row">
 
               </div>
               <div class="form-group">
-                <label for="exampleInputEmail1">Username</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
+                <label>Username</label>
+                <input type="text"  class="form-control" id="exampleInputUserName"   placeholder="Enter Username" id="userName" required [(ngModel)]="model.userName" name="userName">
               
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password" [(ngModel)]="model.password" name="password">
               </div>
               
-              <button type="submit" id="buttonLogIn" class="btn btn-primary">Log In</button>
+              <button type="submit" id="buttonLogIn" (click)="submit()" class="btn btn-primary">Log In</button>
         </div>
-
+        </form>
       </fieldset>
     </form>
   </div>
