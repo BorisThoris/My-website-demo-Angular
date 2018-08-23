@@ -20,6 +20,9 @@ import { PictureSliderComponent } from './picture-slider/picture-slider.componen
 import { SearchOptionsComponent } from './search-options/search-options.component';
 import { UserProfileCardComponent } from './user-profile-card/user-profile-card.component';
 import { MessageTemplateComponent } from './message-template/message-template.component';
+import { HttpClientModule } from '../../node_modules/@angular/common/http';
+import { CatCardComponent } from './cat-card/cat-card.component';
+
 
 @NgModule({
   declarations: [
@@ -40,13 +43,18 @@ import { MessageTemplateComponent } from './message-template/message-template.co
     SearchOptionsComponent,
     UserProfileCardComponent,
     MessageTemplateComponent,
+    CatCardComponent,
+    
+    
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule.forRoot(),
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

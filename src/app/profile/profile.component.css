@@ -1,9 +1,10 @@
 #profileDiv{
    
     height:auto;
-    width:400px;
+    width:450px;
     background-color:white;
     margin:20px auto;
+    border-width: 2cpx;
     
 
 }
@@ -41,6 +42,12 @@
 
 #inputField{
     display:block;
+}
+
+#changeButton{
+    border-width: 2px;
+    border-style:solid;
+    border-color:black;
 }
 
 #changeButton:hover{

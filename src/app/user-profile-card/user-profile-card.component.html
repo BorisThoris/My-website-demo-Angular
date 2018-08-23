@@ -1,17 +1,14 @@
 
   <div id="UserCard" class="card">
     
-    <img id="profilePic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg" alt="Smiley face"
-      height="150" width="150">
-    <h3 id="username">Username:
-      
-    </h3>
+    <img id="profilePic" src= {{user.profilePic}} alt="Smiley face" height="160" width="200">
+    <h3 id="username">{{user.username}}</h3>
     <div id="picUrl" class="form-group">
+      <button type="button" id="changeButton" class="btn btn-success" (click)="testFunc()" >Delete</button>
+    </div>
 
       
       
-      <button type="button" id="changeButton" class="btn btn-success">Change</button>
-    </div>
 
   </div>
  

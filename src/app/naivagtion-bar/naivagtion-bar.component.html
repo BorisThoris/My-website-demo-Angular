@@ -1,3 +1,4 @@
+<form #form="ngForm">
 <nav id="navBar" class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="about" id="brand">Cat World</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03"
@@ -5,46 +6,78 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
+  
   <div class="collapse navbar-collapse" id="navbarColor03">
     
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="about">About</a>
-      </li>
       
-      <li class="nav-item">
-        <a class="nav-link" href="login">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="register">Register</a>
-      </li>
       
-      <li class="nav-item">
-        <a class="nav-link" href="create">Create Post</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="viewAll">View All</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="profile">Profile</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="logout">Logout</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="admin">Admin</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="messages">Message Board</a>
-      </li>
+      
+      <a *ngIf="isAuth()" class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="create">Create Post</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="viewAll">View All</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="profile">Profile</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" (click)="Logout()">Logout</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="admin">Admin</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="messages">Message Board</a>
+        </li>
+      </a>
+
+      
+      
+      <a *ngIf="isNotAuth()" class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="about">About</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="login">Login</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="register">Register</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="messages">Message Board</a>
+        </li>
+      </a>
+        
+
+      
+        
+      
+      
+      
       
     </ul>
-    <div id="seperator">|</div>
+    <a *ngIf="isAuth()">
+    
     <div class="nav-profilePic" id="profilePic">
-      <a class="nav-link" href="profile">UserName: <img id="ProfilePicImage" src="https://cdn.shopify.com/s/files/1/1993/9541/products/cat_bowtie.jpg?v=1508953263" alt="Italian Trulli"  width="60" height="60"></a>
+      <a class="nav-link" href="profile">{{username}}: <img id="ProfilePicImage" src= {{imgUrl}} alt="Italian Trulli"  width="100" height="80"></a>
     </div>
+    </a>
     <form class="form-inline my-2 my-lg-0">
       
     </form>
+    
   </div>
+  
 </nav>
+</form>

@@ -1,49 +1,51 @@
 <div id="pageInfo">
     <div>
+      <form #form="ngForm">
       <div class="card">
         <div class="card-body">
+         
           <legend>Post Your Kate</legend>
           <div class="form-group">
             <label for="exampleInputEmail1">Name</label>
-            <input type="email" class="form-control" id="nameField" aria-describedby="emailHelp" placeholder="Cat Name">
+            <input type="email" class="form-control" id="nameField" aria-describedby="emailHelp" placeholder="Cat name" required [(ngModel)]="model.name" name="name">
           
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Breed</label>
-            <input type="text" class="form-control" id="breedField" placeholder="Breed">
+            <input type="text" class="form-control" id="breedField" placeholder="Breed" required [(ngModel)]="model.breed" name="breed">
           </div>
           <div class="form-group">
             <div id="age">
             <label for="exampleInputPassword1">Age</label>
-            <input type="Number" class="form-control" id="ageField" placeholder="Age">
+            <input type="Number" class="form-control" id="ageField" placeholder="Age" required [(ngModel)]="model.age" name="age">
             </div>
             
           </div>
           <div class="form-group"id="description">
             
             <label for="exampleTextarea">Information</label>
-            <textarea class="form-control" id="desciption2" placeholder="Description" rows="3"></textarea>
+            <textarea class="form-control" id="desciption2" placeholder="Description" rows="3" required [(ngModel)]="model.information" name="information"></textarea>
             
           </div>
           <div id="number">
             <label for="exampleInputPassword1"> Contact Number</label>
-            <input type="Number" class="form-control" id="numberField" placeholder="Number">
+            <input type="Number" class="form-control" id="numberField" placeholder="Number" required [(ngModel)]="model.contactNumber" name="contactNumber">
           </div>
           
           <div class="form-group" id="imgUrl">
             <label for="exampleInputPassword1" id="imgUrl2">Img Url</label>
-            <input type="text" class="form-control" id="urlField" placeholder="Url ">
+            <input type="text" class="form-control" id="urlField" placeholder="Url" required [(ngModel)]="model.imgUrl" #imgUrl="ngModel" name="imgUrl">
           </div>
 
-          <button type="submit" id="buttonCreatePost" class="btn btn-primary">Create</button>
+          <button type="submit" id="buttonCreatePost" (click)="test()" class="btn btn-primary">Create</button>
         </div>
       </div>
 
       <div id="catPiture">
          <legend>Picture Preview</legend>
-         <img src="https://cdn.pixabay.com/photo/2016/08/10/14/44/cat-1583462__340.png" id="imagePreview2" height="400" width="480" alt="catProfilePic">
+         <img src= {{this.model.imgUrl}}  id="imagePreview2" height="400" width="480" alt="catProfilePic">
       </div>
-
+      </form>
       </div>
       
       

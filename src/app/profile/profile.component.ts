@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../user';
+import { HttpClientModule } from '@angular/common/http';
+import remote from "../services/kinvey-remote-service.service.js";
 
 @Component({
   selector: 'app-profile',
@@ -6,10 +9,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
-  constructor() { }
-
+  model:User;
+  username:String;
+  picurl:String;
+  
+  constructor(private remote: remote){
+    this.model = new User(sessionStorage.getItem("username"), null, sessionStorage.getItem("picUrl"),null)
+    this.username= sessionStorage.getItem("username");
+    this.picurl = sessionStorage.getItem("profilePic");
+  }
+  
+  //UPDATE FUNC
+  testfunc(){
+    console.log(this.model.username);
+    this.remote.updateUser(this.model.username, null, sessionStorage.getItem("userId"), this.model.picUrl).subscribe((UserData) =>
+    {
+      console.log(UserData); this.remote.saveSession(UserData);
+      this.model = new User(sessionStorage.getItem("username"), null, sessionStorage.getItem("picUrl"), null)
+      this.username = sessionStorage.getItem("username");
+      this.picurl = sessionStorage.getItem("profilePic");
+    });
+  }
+    
+   
   ngOnInit() {
   }
 
 }
+
+
+
+
+

@@ -22,6 +22,7 @@ font-weight:900;
     display:inline-block;
     margin: 18px;
     position:relative;
+    float:right;    
 }
 
 #picture1{

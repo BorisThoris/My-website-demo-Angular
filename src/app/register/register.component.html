@@ -1,3 +1,4 @@
+<form #form="ngForm">
 <div id="pageInfo">
   <div id="registerForm">
     <form>
@@ -6,25 +7,26 @@
         <div class="card" id="registerCard">
             <div class="form-group">
               <label for="exampleInputEmail1">Username</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username" required [(ngModel)]="model.username" name="username">
             
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password" [(ngModel)]="model.password" name="password">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Password Repeat</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Repeat Password">
+              <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Repeat Password" [(ngModel)]="model.repeatPassword" name="repeatPassword">
             </div>
-            <button type="submit" id="buttonRegister" class="btn btn-primary">Register</button>
+            <button type="submit" id="buttonRegister" (click)="testFunc()" class="btn btn-primary">Register</button>
         </div>
           
-
-
-
-        
       </fieldset>
     </form>
   </div>
 </div>
+</form>
+
+
+
+        
