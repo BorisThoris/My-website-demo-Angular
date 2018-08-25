@@ -1,4 +1,4 @@
-<form #form="ngForm">
+<form #form="ngForm"> 
 <nav id="navBar" class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="about" id="brand">Cat World</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03"
@@ -27,13 +27,15 @@
         </li>
   
         <li class="nav-item">
-          <a class="nav-link" (click)="Logout()">Logout</a>
+          <a  id="logout" class="nav-link" (click)="Logout()">Logout</a>
         </li>
-  
+
+        <a *ngIf="isAdmin()" class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" href="admin">Admin</a>
         </li>
-  
+        </a>
+
         <li class="nav-item">
           <a class="nav-link" href="messages">Message Board</a>
         </li>

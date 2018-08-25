@@ -1,9 +1,8 @@
 <div id="pageInfo">
   <div class="card" id="messages">
   <h3 id="title">Message Board</h3>
-  <app-message-template></app-message-template>
+  <app-message-template *ngFor="let m of messages" (changedMessages)="getMessagesAgain($event)" [message]="m"></app-message-template>
   
-
-
   </div>
 </div>
+

@@ -30,6 +30,7 @@ export default class KinveyRemoteServiceService {
     sessionStorage.setItem('username', userData.username);
     sessionStorage.setItem('userId', userData._id);
     sessionStorage.setItem('picUrl', userData.profilePic);
+    sessionStorage.setItem('isAdmin', userData.isAdmin);
   }
 
   //POST
@@ -115,16 +116,56 @@ export default class KinveyRemoteServiceService {
   }
     
   //DELETE USER
-  
   DeleteUser(id){
     //DELETE /user/:appKey/:id HTTP/1.1
     let url = kinveyBaseUrl + 'user' + "/" + appKey + "/" + id;
     return (this.delete(url,  null, 'kinvey'))
+  }
 
+  //GET CAT BY ID
+  GetCatById(id){
+    //GET /appdata/:appKey/:collectionName/:id
+    let url = kinveyBaseUrl + 'appdata' + "/" + appKey + "/" + "Cats" + "/" + id
+    return (this.get(url, "kinvey"))
+  }
+  
+  //UPDATE CAT BY ID
+  UpdateCat(name, breed, age, contactNumber, information,imgUrl, id){
+    ///appdata/:appKey/:collectionName/:id HTTP/1.1
+    let obj = { name, breed, age, contactNumber, information, imgUrl };
+    let url = kinveyBaseUrl + 'appdata' + '/' + appKey + '/' + "Cats" + "/" + id
+    let data = obj;
+    return (this.put(url, data, 'kinvey '))
+  }
+
+  //DELETE CAT 
+  deleteCat(id){
+    //DELETE /appdata/:appKey/:collectionName/:id?query=... HTTP/1.1
+    let url = kinveyBaseUrl + 'appdata' + '/' + appKey + '/' + 'Cats' + '/' + id
+    return(this.delete(url,id,'kinvey'));
 
   }
 
+  //GET MESSAGES
+  GetAllMessages() {
+    // /appdata/:appKey/:collectionName HTTP/1.1
+    // return remote.get('appdata', "Products", 'kinvey');
+    let url = kinveyBaseUrl + 'appdata' + "/" + appKey + "/" + "Messages";
+    return (this.get(url, 'kinvey'));
+  }
 
+  //GET USER BY ID
+  GetUserById(id) {
+    //GET /user/:appKey/:id HTTP/1.1
+    let url = kinveyBaseUrl + 'user' + "/" + appKey + "/" + id; 
+    return (this.get(url, "kinvey"))
+  }
+  
+  //DELETE MESSAGE BY ID
+  DeleteMessageById(id){
+    let url = kinveyBaseUrl + 'appdata' + '/' + appKey + '/' + 'Messages' + '/' + id
+    return (this.delete(url, id, 'kinvey'));
+  }
   
 
 

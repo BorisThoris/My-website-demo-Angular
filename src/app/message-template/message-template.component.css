@@ -1,7 +1,25 @@
 #tempalteMessage{
     width:1050px;
-    height:300px;
+    height:auto;
     margin:10px auto;
 
 }
 
+#buttonDelete{
+    border-radius:5px;
+    border-style:solid;
+    border-color:black;
+    background-color:darkred;
+    margin:auto;
+    width:300px;
+}
+
+#buttonDelete:hover{
+transform: scale(1.20);
+  background-color:rgb(110, 3, 3);
+
+  outline: 0;
+  -webkit-box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  
+}

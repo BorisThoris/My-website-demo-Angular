@@ -1,0 +1,19 @@
+Cat World Bg
+Website using Angular by Boris V. Bostanzdhiev.
+Features nav-bar with conditional rendering, depending on if you're logged in or not and if you're an admin.
+The website lets you list cats for adoption,  and find cats for addoption.
+You have your own customizable profile.
+You can also visit the message board where import things, and events will be posted.
+The backed was made using Kinvey.
+
+Pages
+{
+Login
+Logout
+Register 
+About
+View-All
+Admin
+MessageBoard
+Profile
+}

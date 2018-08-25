@@ -1,14 +1,15 @@
 
+  
+<a *ngIf="IsDisabled()">
   <div id="UserCard" class="card">
-    
     <img id="profilePic" src= {{user.profilePic}} alt="Smiley face" height="160" width="200">
     <h3 id="username">{{user.username}}</h3>
     <div id="picUrl" class="form-group">
       <button type="button" id="changeButton" class="btn btn-success" (click)="testFunc()" >Delete</button>
     </div>
-
-      
-      
-
   </div>
- 
+</a>
+    
+    
+      
+      

@@ -13,6 +13,7 @@ import { ProfileComponent } from './profile/profile.component'
 import { AdminComponent } from './admin/admin.component'
 import { AboutComponent } from './about/about.component'
 import { MessagesComponent } from './messages/messages.component'
+import { ViewCatInfoComponent } from './view-cat-info/view-cat-info.component'
 
 
 
@@ -30,7 +31,8 @@ const routes : Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'messages', component: MessagesComponent }
+  { path: 'messages', component: MessagesComponent },
+  { path: 'view-cat/:id', component: ViewCatInfoComponent }
 
   
 ];

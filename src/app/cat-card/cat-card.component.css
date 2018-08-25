@@ -11,8 +11,8 @@
 .card{
     
     margin:45px 20px;
-    float:left;
-    
+    border-width:3px;
+    display:inline-block;
     width:330px;
     height:400px;
 }
@@ -76,3 +76,4 @@ text-align: center;
 #age{
   font-weight:650;
 }
+

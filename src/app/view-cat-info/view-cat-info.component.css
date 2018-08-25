@@ -1,0 +1,86 @@
+#sadBox{
+width:auto;
+height:auto;
+margin: 20px 40px;
+display:inline-block;
+background-color:white;
+border-radius:10%;
+border-width:4px;
+
+}
+
+#sadBox2{
+width:500px;
+height:auto;
+margin:20px;
+float:right;
+
+background-color:white;
+
+}
+
+#genText{
+    text-align:left
+}
+
+#textsArea{
+    resize: none;
+}
+
+#NameArea{
+resize: none;
+}
+
+#BreedArea{
+resize: none;
+}
+
+#NumberArea{
+resize: none;
+}
+
+#AgeArea{
+    resize: none;
+}
+
+#InfoArea{
+    resize: none;
+}
+
+#dangerButton{
+    float:right;
+    margin:10px;
+    border-width:2px;
+    border-color:black;
+}
+
+#dangerButton:hover{
+transform: scale(1.20);
+  background-color:rgb(110, 3, 3);
+
+  outline: 0;
+  -webkit-box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  
+}
+
+#changeButton{
+    margin:10px;
+    border-width:2px;
+    border-color:black;
+}
+
+#changeButton:hover{
+transform: scale(1.20);
+ 
+
+  outline: 0;
+  -webkit-box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  
+}
+
+#catImg{
+    border-radius:10%;
+}
+

@@ -12,11 +12,21 @@ export class AdminComponent implements OnInit {
   constructor(private remote: remote) { }
 
   ngOnInit() {
+    if (sessionStorage.getItem("isAdmin") !== "Yes") {
+      console.log("not admin")
+    }
     this.remote.GetAllUsers().subscribe((data)=>{
       this.users = data;
-      console.log(data);
+    
     })
   }
+
+  getUsersAgain(){
+    this.remote.GetAllUsers().subscribe((data) => {
+      this.users = data;
+    })
+  }
+
 
 }
  

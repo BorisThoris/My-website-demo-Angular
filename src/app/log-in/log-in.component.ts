@@ -2,7 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import remote from "../services/kinvey-remote-service.service.js";
 import { Router } from '@angular/router'
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrService } from 'ngx-toastr';
 
+import { ToastrModule } from 'ngx-toastr';
 // public id:
 // public userName:
 // public password:
@@ -15,40 +19,52 @@ import { Router } from '@angular/router'
   
 })
 export class LogInComponent implements OnInit {
-   model: User;
-   constructor(private remote:remote, private router: Router) {this.model = new User("","",null,null);}
-   
-   //FUNCTIONS
-   
-   testFunc(){
-     
+  model: User;
+  
+  constructor(private remote: remote, private router: Router, private toastr: ToastrService) {
+   this.model = new User("","",null,null); 
+  }
+  
+  //FUNCTIONS
+  testFunc(){
     //VALIDATION
       if(this.model.username === "" || this.model.password === ""){
-          console.log("fields should not be empty");}
+          this.toastr.error("Fields should not be empty")}
     //LOGIN
+      else if (sessionStorage.length != 0) { this.toastr.error("Already Logged In!"); this.router.navigate(['/viewAll']);}
       else{
         this.remote.login(this.model.username, this.model.password).subscribe((userData) =>
         {
-          console.log("success");
           this.remote.saveSession(userData);
-          console.log(sessionStorage)
-          this.router.navigate(['/about'])
-        });
+          this.toastr.success("Logged in!");
+          this.router.navigate(['/viewAll'])
+        }, (error: any) => {
+          this.toastr.error("LogIn Error");
+        })
       }
     }
     
+    submit():void{
+    } 
+    ngOnInit(){
+    }
+    ngOnChange(){
+    }
     
-  submit():void{
-  } 
-  ngOnInit(){
   }
-  ngOnChange(){
-  }
-  
+    
+
+    
+    
+
+   
+
+          
+          
+    
     
 
    
     
 
   
-}

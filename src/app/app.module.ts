@@ -22,6 +22,12 @@ import { UserProfileCardComponent } from './user-profile-card/user-profile-card.
 import { MessageTemplateComponent } from './message-template/message-template.component';
 import { HttpClientModule } from '../../node_modules/@angular/common/http';
 import { CatCardComponent } from './cat-card/cat-card.component';
+import { ViewCatInfoComponent } from './view-cat-info/view-cat-info.component';
+import { NotifierModule } from 'angular-notifier';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 
 @NgModule({
@@ -44,6 +50,8 @@ import { CatCardComponent } from './cat-card/cat-card.component';
     UserProfileCardComponent,
     MessageTemplateComponent,
     CatCardComponent,
+    ViewCatInfoComponent,
+    
     
     
     
@@ -54,6 +62,14 @@ import { CatCardComponent } from './cat-card/cat-card.component';
     NgbModule.forRoot(),
     FormsModule,
     HttpClientModule,
+    NotifierModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'toast-top-right',
+    }),
+    BrowserAnimationsModule
+      
+
     
   ],
   providers: [],

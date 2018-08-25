@@ -1,27 +1,37 @@
 #listView{
-    background-color:white;
+    
     width:auto;
-    max-width:1100px;
+    max-width:1200px;
+    background-color:white;
     height:auto;
-    float:right;
-    margin:20px; 
+    margin:auto;
     position:relative;
+    border-width:4px;
+  
+    
+}
+
+#allTitle{
+    font-weight: 900;
+    font-size:80px;
 }
 
 .card{
-    
     margin:45px 20px;
     float:left;
-    
     width:330px;
     height:400px;
 }
+    
+    
 
 #searchOptions{
     height:auto;
 }
 
 #viewAllForm{
+    margin:auto;
+    height:auto;
     
 }
 
@@ -58,14 +68,13 @@ transform: scale(1.13);
     font-weight:900;
 }
 
-
 #pageInfo{
 color:black;
 background-color:none;
 font-weight:900;
 text-align: center;
 
-    
+
 
 }
 
@@ -76,3 +85,7 @@ text-align: center;
 #age{
   font-weight:650;
 }
+
+
+    
+

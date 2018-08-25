@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Cat } from '../cat';
 import remote from "../services/kinvey-remote-service.service.js";
+import { Router } from '@angular/router'
+import { ToastrService } from 'ngx-toastr';
 //public name: string,
 //public breed: string,
 //public age: number,
@@ -20,7 +22,7 @@ export class CreateCatComponent implements OnInit {
   model: Cat;
   url: String;
   
-  constructor(private remote:remote) {
+  constructor(private remote: remote, private router: Router, private toastr: ToastrService) {
     
     this.model = new Cat("", "", 0, 0, "","https://cdn.pixabay.com/photo/2016/08/10/14/39/cat-1583459__340.png")
     this.url = this.model.imgUrl;
@@ -39,19 +41,27 @@ export class CreateCatComponent implements OnInit {
 
     //VALIDATION
     if(name === "" || breed === "" || age <= 0 || contactNumber <0 || information === "" || imgUrl === ""){
-      console.log("all fields are required");
-    }if(name.length>16){
-      console.log("name needs to be shorter");
-    }if(information.length>380){
-      console.log("information should be less")}
-    //CAT CREATION  
-    else{
-      console.log("to create");
-      this.remote.CreateCat(name,breed,age,contactNumber,information,imgUrl).subscribe((data) => {
-        console.log("it worked");
-      });
+      this.toastr.error("Fields Should Not Be Empty!");
+    }else if(name.length>16){
+      this.toastr.error("Name Should Be Shorter!");
+    }else if(information.length>380){
+      this.toastr.error("Information Should Be Less!");}
+      else if(age>17)
+    {
+      this.toastr.error("Cat Should Be Alive!");
     }
-  }
+    //CAT CREATION
+    else{
+      this.remote.CreateCat(name,breed,age,contactNumber,information,imgUrl).subscribe((data) => {
+        this.router.navigate(["viewAll"])
+        this.toastr.success("Cat Created Succesfully!");
+      }), (error: any) => {
+        this.toastr.error("Creation Error");
+      };
+      }
+    }
+        
+      
 
 
 

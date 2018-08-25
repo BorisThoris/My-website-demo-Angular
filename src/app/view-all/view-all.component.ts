@@ -10,6 +10,7 @@ import { EventEmitter } from 'events';
 })
 
 export class ViewAllComponent implements OnInit {
+  
   cats
   
   constructor(private remote: remote) { }

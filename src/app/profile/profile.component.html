@@ -6,7 +6,7 @@
     <h3 id="username">{{username}}: <input type="text" id="usernameField" class="form-control" placeholder="Username Goes Here" id="usernameField" [(ngModel)]="model.username" name="username"></h3>
     <div id="picUrl" class="form-group">
       
-      <h4 id="IsAdmin">Is Admin:</h4>
+      <h4 id="IsAdmin"><a *ngIf="isAdmin()">Is Admin: Yes</a></h4>
       <label id="inputField" class="col-form-label" for="inputDefault">Pic Url: <input type="text"  class="form-control" placeholder="Url Goes Here" id="urlField" [(ngModel)]="model.picUrl" name="picUrl"></label>
       <button (click)="testfunc()" type="button" id="changeButton" class="btn btn-success">Change</button>
     </div>

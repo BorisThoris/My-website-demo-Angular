@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { HttpClientModule } from '@angular/common/http';
-import remote from "../services/kinvey-remote-service.service.js";
+import remote from "../services/kinvey-remote-service.service.js"
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-profile',
@@ -13,10 +14,12 @@ export class ProfileComponent implements OnInit {
   username:String;
   picurl:String;
   
-  constructor(private remote: remote){
+  constructor(private remote: remote, private toastr: ToastrService ){
     this.model = new User(sessionStorage.getItem("username"), null, sessionStorage.getItem("picUrl"),null)
     this.username= sessionStorage.getItem("username");
     this.picurl = sessionStorage.getItem("profilePic");
+    
+   
   }
   
   //UPDATE FUNC
@@ -24,15 +27,26 @@ export class ProfileComponent implements OnInit {
     console.log(this.model.username);
     this.remote.updateUser(this.model.username, null, sessionStorage.getItem("userId"), this.model.picUrl).subscribe((UserData) =>
     {
-      console.log(UserData); this.remote.saveSession(UserData);
+      this.remote.saveSession(UserData);
       this.model = new User(sessionStorage.getItem("username"), null, sessionStorage.getItem("picUrl"), null)
       this.username = sessionStorage.getItem("username");
       this.picurl = sessionStorage.getItem("profilePic");
+      this.toastr.info("User Information Changed!")
+      
     });
   }
     
-   
   ngOnInit() {
+   
+  }
+   
+  isAdmin(){
+    if(sessionStorage.getItem("isAdmin")!=="undefined"){
+      return true;
+    }else{
+      return false;
+    }
+
   }
 
 }

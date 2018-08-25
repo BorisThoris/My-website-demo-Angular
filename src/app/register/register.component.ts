@@ -4,7 +4,7 @@ import remote from "../services/kinvey-remote-service.service.js";
 import { Router } from '@angular/router'
 import auth from "../services/auth-service.service.js";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { ToastrService } from 'ngx-toastr';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 
@@ -16,7 +16,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 })
 export  class RegisterComponent implements OnInit {
   model:User;
-  constructor (private remote:remote, private router: Router) {this.model = new User('','',null,'')}
+  constructor (private remote:remote, private router: Router, private toastr: ToastrService) {this.model = new User('','',null,'')}
 
   
   //FUNCTIONS
@@ -25,17 +25,21 @@ export  class RegisterComponent implements OnInit {
     console.log(this.model.password);
         //CHECK1
         if(this.model.username=="" || this.model.password=="" || this.model.repeatPassword==""){
-        console.log("Fields snould not be empty!")}
+        this.toastr.error("Fields Should Not Be Empty!")}
         //CHECK2
         else if(this.model.repeatPassword!=this.model.password){
-        console.log("passwords dont match")}
+          this.toastr.error("Passwords Should Match!")}
         //REG
         else{
-        this.remote.register(this.model.username, this.model.password, null).subscribe();
-        //NAVIGATE
-        this.router.navigate(["/login"])
+        this.remote.register(this.model.username, this.model.password, null).subscribe((Data)=>{
+          this.toastr.success("Registered!");
+          this.router.navigate(["/login"])
+        }, (error:any)=>{
+          this.toastr.error("Registration Error");
+        });
       }
   }
+          
   
   onSubmit(): void {
   }

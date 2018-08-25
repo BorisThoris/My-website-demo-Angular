@@ -2,7 +2,7 @@
   <div id="usersBoard" class="jumbotron">
     <legend>All Users</legend>
     
-    <app-user-profile-card *ngFor="let u of users" [user]="u"></app-user-profile-card>
+    <app-user-profile-card *ngFor="let u of users" [user]="u" (changedUsers)="getUsersAgain($event)"></app-user-profile-card>
       
       
   </div>

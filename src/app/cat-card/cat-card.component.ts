@@ -2,6 +2,8 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 import { Cat } from '../cat';
 import remote from "../services/kinvey-remote-service.service.js";
 import { EventEmitter } from 'events';
+import { Router } from '@angular/router'
+
 @Component({
   selector: 'app-cat-card',
   templateUrl: './cat-card.component.html',
@@ -11,13 +13,25 @@ export class CatCardComponent implements OnInit {
   @Input() cat: Cat;
  
     
-    constructor() {
+    constructor(private router: Router) {
    
     }
 
   ngOnInit() {
-    console.log("lol");
-    
+    console.log(this.cat._acl);
+  }
+
+  loadInfo(){
+    let id = this.cat._id;
+    this.router.navigate(['/view-cat/' + id])
+  }
+  
+  isCreator(){
+    let user = sessionStorage.getItem("userId");
+    let catCreator = this.cat._acl.creator;
+    if(user===catCreator){
+      return(true);
+    }
   }
 
 }
