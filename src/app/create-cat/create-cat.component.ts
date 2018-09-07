@@ -50,16 +50,22 @@ export class CreateCatComponent implements OnInit {
     {
       this.toastr.error("Cat Should Be Alive!");
     }
+    else if (contactNumber.toString().length<8){
+      this.toastr.error("Provide a valid number!")    
+    }
     //CAT CREATION
     else{
-      this.remote.CreateCat(name,breed,age,contactNumber,information,imgUrl).subscribe((data) => {
+        this.toastr.info("Creating Cat");
+        this.remote.CreateCat(name,breed,age,contactNumber,information,imgUrl).subscribe((data) => {
         this.router.navigate(["viewAll"])
         this.toastr.success("Cat Created Succesfully!");
-      }), (error: any) => {
-        this.toastr.error("Creation Error");
-      };
-      }
+      }, (error: any) => {
+        console.log(error);
+        this.toastr.error(error.statusText);
+      })
+      } 
     }
+        
         
       
 

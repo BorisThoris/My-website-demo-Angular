@@ -27,17 +27,37 @@ export class NaivagtionBarComponent implements OnInit {
       this.toastr.info("Logged out!");
       sessionStorage.clear();
       this.router.navigate(['/about']);
-      
+      if (sessionStorage.length === 0) {
+        console.log("lol, inside if")
+        this.remote.login("Guest2", "Guest2").subscribe((data) => {
+          this.remote.saveSession(data);
+          this.toastr.success("Guest")
+        })
+      }
     })
   }
 
   isAuth(){
-    if (sessionStorage.getItem('authtoken') !== null){
+    if (sessionStorage.getItem('authtoken') !== null && sessionStorage.getItem("username")!=="Guest2"){
       this.model = new User(sessionStorage.getItem("username"), null, sessionStorage.getItem("picUrl"), null)
       this.username = this.model.username;
       this.imgUrl = this.model.picUrl;
+      return true;
     }
-    return sessionStorage.getItem('authtoken') !== null;
+    
+  }
+
+  isGuest(){
+    if (sessionStorage.getItem("username") === "Guest2") {
+      return true;
+    }
+    else return false;
+  }
+
+  isNotGuest(){
+    if(sessionStorage.getItem("username")==="Guest2"){
+      return false;
+    }
   }
 
   isAdmin(){

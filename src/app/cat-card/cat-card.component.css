@@ -13,8 +13,9 @@
     margin:45px 20px;
     border-width:3px;
     display:inline-block;
-    width:330px;
+    width:300px;
     height:400px;
+    border-width:4px;
 }
 
 #searchOptions{
@@ -26,7 +27,7 @@
 }
 
 #catCard{
-    width:315px;
+    width:350px;
     height: auto;
     
     display:inline-block;
@@ -34,8 +35,8 @@
 }
 
 #catPic{
-    border-style:solid;
-    border-radius:5%;
+   border-radius:6%;
+   border-style:solid;
 }
 
 #buttonCardCat{
@@ -70,7 +71,8 @@ text-align: center;
 }
 
 #breed{
-  font-weight:700;  
+  font-weight:700; 
+  font-size:320
 }
 
 #age{

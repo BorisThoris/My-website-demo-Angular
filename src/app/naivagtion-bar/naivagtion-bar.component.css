@@ -2,57 +2,95 @@
     background-color:green;
 }   
 
-#profilePic{
-   float: right;
+/* Messages */
+#privateMessages{
+    float:left;
+}
+
+#messagesLabel{
    font-size:30px;
 }
-#profilePic:hover{
-    color: red;
-    
+
+#pmImage:hover{
+transform: scale(1.10);
 }
+
+#pmImage{
+    border-radius: 30%;
+    border-style:solid;
+    background-color:green;
+}
+
+#numberOfMessages{
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size:35px;
+    text-align: center;
+    text-align: 0px auto;
+    animation: newMsg 2.5s linear infinite;
+}
+
+#numberOfMessages:hover{
+   color:black;
+}
+
+/* ProfilePic */
+#profilePic{
+    display:inline-block;
+    font-size:30px;
+    height:auto;
+}
+
+#profilePic:hover{
+    background-color: red;
+}
+
 #ProfilePicImage{
     border-radius: 30%;
     border-style:solid;
 }
 
 #ProfilePicImage:hover{
-transform: scale(1.22);
+transform: scale(1.10);
 }
 
-.nav-item:hover{
-    transform: scale(1.12); 
-    
-   
+/* All Items Hover */
+.nav-item:hover a{
+    transform: scale(1.15)
 }
 
+/* All Items */
 .nav-item{
-    font-size: 30px;
+    font-size: 35px;
 }
 
+/* Logout */
 #logout{
      cursor: pointer; 
 }
     
-    
-
+/* Brand */
 #brand{
     font-size: 50px;
     color:green;
     font-weight:900;
     text-shadow: 2px 2px black;
-    
+    animation: logoAnimation 4s linear infinite;
 }
 
-#brand:hover{
-    
-    transform: scale(1.16);
-}
-
+/* Seperator */
 #seperator{
     font-size:40px;
     float:right;
 }
 
+/* NavBar */
 #navBar{
     margin: 10px 20px;
+    border-width:2px;
+    white-space: nowrap;
 }
+
+/* Animations */
+@keyframes sad { 0%{transform: scale(1);} 50%{transform: scale(1.15);} 100%{transform: scale(1);} }
+@keyframes logoAnimation { 0%{transform: scale(1);} 50%{transform: scale(1.15);} 100%{transform: scale(1);} }
+@keyframes newMsg { 0% {color:yellow;} 50% { color:rgb(206, 34, 34) } 100% { color:yellow;} } 

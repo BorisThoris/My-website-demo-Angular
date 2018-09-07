@@ -1,19 +1,22 @@
 
 <form #form="ngForm">
-<div class="card" id="sadBox">
+<div id="wrapper">
+  <!--Picture-->
   <img id="catImg" src= {{this.model.imgUrl}} alt="Smiley face" height="600px" width="800px">
-</div>
-  
-<div class="card" id="sadBox2">
-  <div class="card-body">
-    <legend id="genText">Name:<textarea class="form-control" id="NameArea" rows="1" required [(ngModel)]="model.name" name="name"></textarea></legend>
-    <legend id="genText">Breed:<textarea class="form-control" id="BreedArea" rows="1" required [(ngModel)]="model.breed" name="breed"></textarea></legend>
-    <legend id="number">Number:<textarea class="form-control" id="NumberArea" rows="1" required [(ngModel)]="model.contactNumber" name="contactNumber"></textarea></legend>
-    <legend id="age">Age:<textarea class="form-control" id="AgeArea" rows="1" required [(ngModel)]="model.age" name="age"></textarea></legend>
-    <legend id="info">info: <textarea class="form-control" id="infoArea" rows="2" required [(ngModel)]="model.information" name="information"></textarea></legend>
-    <legend id="img">Img:<textarea class="form-control" id="AgeArea" rows="1" required [(ngModel)]="model.imgUrl" name="imgUrl"></textarea></legend>
-    <button type="button" (click)="testFunc()" class="btn btn-success" id="changeButton">Change</button>
-    <button type="button" (click)="deleteFunc()" class="btn btn-danger" id="dangerButton">Delete</button>
+
+  <!--Options-->
+  <div class="card" id="sadBox2">
+    <div class="card-body">
+      <legend id="genText">Name:<textarea class="form-control" id="NameArea" rows="1" required [(ngModel)]="model.name" name="name"></textarea></legend>
+      <legend id="genText">Breed:<textarea class="form-control" id="BreedArea" rows="1" required [(ngModel)]="model.breed" name="breed"></textarea></legend>
+      <legend id="number">Number:<textarea class="form-control" id="NumberArea" rows="1" required [(ngModel)]="model.contactNumber" name="contactNumber"></textarea></legend>
+      <legend id="age">Age:<textarea class="form-control" id="AgeArea" rows="1" required [(ngModel)]="model.age" name="age"></textarea></legend>
+      <legend id="info">info: <textarea class="form-control" id="infoArea" rows="2" required [(ngModel)]="model.information" name="information"></textarea></legend>
+      <legend id="img">Img:<textarea class="form-control" id="AgeArea" rows="1" required [(ngModel)]="model.imgUrl" name="imgUrl"></textarea></legend>
+      <button type="button" (click)="testFunc()" class="btn btn-success" id="changeButton">Change</button>
+      <button type="button" class="btn btn-info" (click)="sendMessageFunc()" id="sendPmButton">Send Message </button>
+      <button type="button" (click)="deleteFunc()" class="btn btn-danger" id="dangerButton">Delete</button>
+    </div>
   </div>
 </div>
 </form>

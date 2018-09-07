@@ -14,6 +14,8 @@ import { AdminComponent } from './admin/admin.component'
 import { AboutComponent } from './about/about.component'
 import { MessagesComponent } from './messages/messages.component'
 import { ViewCatInfoComponent } from './view-cat-info/view-cat-info.component'
+import { InboxComponent } from './inbox/inbox.component'
+import { IncorrectPageComponent } from './incorrect-page/incorrect-page.component'
 
 
 
@@ -32,7 +34,9 @@ const routes : Routes = [
   { path: 'admin', component: AdminComponent },
   { path: 'about', component: AboutComponent },
   { path: 'messages', component: MessagesComponent },
-  { path: 'view-cat/:id', component: ViewCatInfoComponent }
+  { path: 'view-cat/:id', component: ViewCatInfoComponent },
+  { path: 'Inbox', component: InboxComponent },
+  { path: '**', component: IncorrectPageComponent }
 
   
 ];

@@ -2,15 +2,17 @@ h4{
 font-weight:900;
 } 
 
-
 #welcomeDiv{
-    float:left;
+    
     background-color:white;
-    width: 500px;
+    width: 600px;
     height:auto;
-    margin:15px;
+    margin:50px auto;
     display:inline-block;
- 
+}
+
+#text{
+    font-size:35px;
 }
 
 #title{
@@ -20,72 +22,92 @@ font-weight:900;
 
 #pictures{
     display:inline-block;
-    margin: 18px;
+    margin: 50px 10px;
+    float:right;
+    text-align:center;
     position:relative;
-    float:right;    
-}
-
-#picture1{
-    border-radius:34px;
-    border-style:solid;
-    border-color:black;
-    display:inline-block;
-    position:relative;
+    size:80px;
     
 }
 
-#picture2{
-    border-radius:34px;
-    border-style:solid;
-    border-color:black;
-    display:inline-block;
-    margin: 0px 10px;
+#all{
+    width: 97%;
+    margin: 0 auto;
 }
 
-#picture3{
-    border-radius:34px;
-    border-style:solid;
+#catTitle{
+    font-size:50px;
+}
+    
+#picture1{
+    border-radius:5%;
+    border-width:5px;
+    border-style:ridge;
     border-color:black;
     display:inline-block;
     position:relative;
+    size:200px;
 }
 
-#picture4{
-    border-radius:34px;
-    border-style:solid;
+#websites{
+    float:left;
+}
+    
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  border-radius:5%;
+    border-width:5px;
+    border-style:ridge;
     border-color:black;
+    display:inline-block;
     position:relative;
-    margin: 10px 10px;
+    size:200px;
 }
 
-#picture1:hover{
-transform: scale(1.04);
-
-  outline: 0;
-  -webkit-box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-  box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 620px;
+  width: 740px;
+  opacity: 0;
+  transition: .9s ease;
+}
+  
+.container:hover .overlay {
+  opacity: 0.8;
 }
 
-#picture2:hover{
-transform: scale(1.04);
-
-  outline: 0;
-  -webkit-box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-  box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+.text {
+  color: black;
+  font-size: 100px;
+  position: absolute;
+  top: 55%;
+  left: 58%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+    
+#image1:hover {
+    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
-#picture3:hover{
-transform: scale(1.04);
-
-  outline: 0;
-  -webkit-box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-  box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+#entireDiv{
+    text-align:center;
 }
 
-#picture4:hover{
-transform: scale(1.04);
-
-  outline: 0;
-  -webkit-box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-  box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+#everythingDiv{
+    width: 97%;
+    margin: 0 auto;
 }
+
+    
+
+    

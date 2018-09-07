@@ -1,9 +1,9 @@
 <div class="card" id="catCard">
-
-  <h3 id="name">{{cat.name}}<a *ngIf="isCreator()"><legend> ✔</legend></a></h3>
-  <img src= {{cat.imgUrl}} id="catPic" alt="Smiley face" height="250" width="280">
-  <legend id="breed">{{cat.breed}}</legend>
+  <h3 id="name">{{cat.name}}<a *ngIf="isCreator()">✔</a></h3>
+  <img src= {{cat.imgUrl}} id="catPic" alt="Smiley face" height="200" width="260">
+  <legend id="breed">Breed: {{cat.breed}}</legend>
   <legend id="age">{{cat.age}} Year/s Old</legend>
   <button type="button" (click)="loadInfo()" id="buttonCardCat" class="btn btn-success">More Info</button>
-  
 </div> 
+
+  

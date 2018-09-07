@@ -26,7 +26,10 @@ import { ViewCatInfoComponent } from './view-cat-info/view-cat-info.component';
 import { NotifierModule } from 'angular-notifier';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { SlideshowModule } from 'ng-simple-slideshow';
+import { InboxComponent } from './inbox/inbox.component';
+import { PmTemplateComponent } from './pm-template/pm-template.component';
+import { IncorrectPageComponent } from './incorrect-page/incorrect-page.component';
 
 
 
@@ -51,6 +54,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MessageTemplateComponent,
     CatCardComponent,
     ViewCatInfoComponent,
+    InboxComponent,
+    PmTemplateComponent,
+    IncorrectPageComponent,
     
     
     
@@ -64,10 +70,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     NotifierModule,
     ToastrModule.forRoot({
-      timeOut: 10000,
+      timeOut: 3500,
       positionClass: 'toast-top-right',
     }),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SlideshowModule
+    
       
 
     

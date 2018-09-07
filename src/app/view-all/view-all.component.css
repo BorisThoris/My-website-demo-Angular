@@ -1,14 +1,13 @@
 #listView{
-    
     width:auto;
-    max-width:1200px;
+    max-width:1300px;
     background-color:white;
     height:auto;
-    margin:auto;
+    margin:20px 30px;
     position:relative;
     border-width:4px;
-  
-    
+    margin:auto;
+    display:inline-block;   
 }
 
 #allTitle{
@@ -31,14 +30,11 @@
 
 #viewAllForm{
     margin:auto;
-    height:auto;
-    
 }
 
 #catCard{
     width:315px;
     height: auto;
-    
     display:inline-block;
     margin:10px 10px;
 }
@@ -57,11 +53,9 @@
 
 #buttonCardCat:hover{
 transform: scale(1.13);
-
-  outline: 0;
-  -webkit-box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-  box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-  
+    outline: 0;
+    -webkit-box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
 
 #name{
@@ -69,21 +63,20 @@ transform: scale(1.13);
 }
 
 #pageInfo{
-color:black;
-background-color:none;
-font-weight:900;
-text-align: center;
-
-
-
+    color:black;
+    background-color:none;
+    font-weight:900;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
 }
 
 #breed{
-  font-weight:700;  
+    font-weight:700;  
 }
 
 #age{
-  font-weight:650;
+    font-weight:650;
 }
 
 

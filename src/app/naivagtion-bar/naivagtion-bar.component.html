@@ -7,42 +7,74 @@
   </button>
 
   
+  
   <div class="collapse navbar-collapse" id="navbarColor03">
-    
     <ul class="navbar-nav mr-auto">
-      
-      
-      
+      <!---FOR LOGGED IN USERS -->
       <a *ngIf="isAuth()" class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="create">Create Post</a>
+          <a class="nav-link" href="about">About</a>
         </li>
-  
+
         <li class="nav-item">
-          <a class="nav-link" href="viewAll">View All</a>
+          <a class="nav-link" href="create">Post Cat</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="viewAll">All Cats</a>
         </li>
   
         <li class="nav-item">
           <a class="nav-link" href="profile">Profile</a>
         </li>
-  
+    
+        <a *ngIf="isAdmin()" class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="admin">Admin</a>
+          </li>
+        </a>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="messages">News</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="Inbox">Inbox</a>
+        </li>
+      
         <li class="nav-item">
           <a  id="logout" class="nav-link" (click)="Logout()">Logout</a>
         </li>
+      
+      </a>
+      
 
-        <a *ngIf="isAdmin()" class="navbar-nav mr-auto">
+      <!---FOR GUESTS -->
+      <a *ngIf="isGuest()" class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="admin">Admin</a>
+          <a class="nav-link" href="about">About</a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="viewAll">All Cats</a>
+        </li>
+      
+        <a *ngIf="isAdmin()" class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="admin">Admin</a>
+          </li>
         </a>
 
         <li class="nav-item">
-          <a class="nav-link" href="messages">Message Board</a>
+          <a class="nav-link" href="login">Login</a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link" href="messages">News</a>
         </li>
       </a>
-
-      
-      
+        
+      <!---FOR LOGGED OUT USERS -->
       <a *ngIf="isNotAuth()" class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" href="about">About</a>
@@ -55,31 +87,57 @@
         <li class="nav-item">
           <a class="nav-link" href="register">Register</a>
         </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="messages">Message Board</a>
-        </li>
       </a>
-        
-
-      
-        
-      
-      
-      
-      
     </ul>
+
+    
+    
+    <!---Profile Section-->
     <a *ngIf="isAuth()">
-    
-    <div class="nav-profilePic" id="profilePic">
-      <a class="nav-link" href="profile">{{username}}: <img id="ProfilePicImage" src= {{imgUrl}} alt="Italian Trulli"  width="100" height="80"></a>
-    </div>
-    </a>
-    <form class="form-inline my-2 my-lg-0">
       
-    </form>
-    
+      <!--Messaging-->
+      <div class="nav-profilePic" id="privateMessages">
+         <a class="nav-link" href="Inbox" id="messagesLabel"> <img id="pmImage" src= "http://www.clker.com/cliparts/1/M/H/m/B/Z/envelope-with-white-letter-hi.png" width="100" height="80"> <b id="numberOfMessages"> 6 New!</b> </a>
+      </div>
+      
+      <!--Profile-->
+      <div class="nav-profilePic" id="profilePic">
+        <a class="nav-link" href="profile">{{username}}: <img id="ProfilePicImage" src= {{imgUrl}} alt="Italian Trulli"  width="100" height="80"></a>
+      </div>
+
+    </a>
   </div>
-  
 </nav>
 </form>
+        
+      
+      
+        
+      
+        
+  
+      
+
+    
+    
+    
+    
+    
+
+
+      
+      
+
+    
+      
+      
+    
+  
+        
+
+      
+        
+      
+      
+      
+      

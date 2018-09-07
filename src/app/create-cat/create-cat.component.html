@@ -1,53 +1,104 @@
 <div id="pageInfo">
-    <div>
+    <div id="wrapper">
       <form #form="ngForm">
-      <div class="card">
+      <div class="card" id="optionsDiv">
         <div class="card-body">
-         
+          <!--Title-->
           <legend>Post Your Kate</legend>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Name</label>
-            <input type="email" class="form-control" id="nameField" aria-describedby="emailHelp" placeholder="Cat name" required [(ngModel)]="model.name" name="name">
+
+          <!--Name-->
+          <div class="form-group" id="nameField">
+            <label id="name" for="exampleInputEmail1">Name
+            <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Cat name" required [(ngModel)]="model.name" name="name">
+            </label>
+          </div>
+         
+          <!--Age-->
+          <div class="form-group" id="age">
+              <label for="exampleInputPassword1">Age
+                <input type="Number" class="form-control" id="ageField" placeholder="Age" required [(ngModel)]="model.age" name="age">
+              </label>
+          </div>
           
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Breed</label>
-            <input type="text" class="form-control" id="breedField" placeholder="Breed" required [(ngModel)]="model.breed" name="breed">
-          </div>
-          <div class="form-group">
-            <div id="age">
-            <label for="exampleInputPassword1">Age</label>
-            <input type="Number" class="form-control" id="ageField" placeholder="Age" required [(ngModel)]="model.age" name="age">
-            </div>
-            
-          </div>
-          <div class="form-group"id="description">
-            
-            <label for="exampleTextarea">Information</label>
-            <textarea class="form-control" id="desciption2" placeholder="Description" rows="3" required [(ngModel)]="model.information" name="information"></textarea>
-            
-          </div>
-          <div id="number">
-            <label for="exampleInputPassword1"> Contact Number</label>
+        <div id="wrapperForDescAndNumb">
+          <!--Number-->
+          <label for="exampleInputPassword1" id="number"> Contact Number <br />
             <input type="Number" class="form-control" id="numberField" placeholder="Number" required [(ngModel)]="model.contactNumber" name="contactNumber">
+          </label>
+        
+          
+          
+          <!--Description-->
+          <label for="exampleTextarea" id="informationDesc">Information 
+            <textarea class="form-control" id="desciption2" placeholder="Description" rows="4" required [(ngModel)]="model.information" name="information"></textarea>
+          </label>
+        </div>
+          
+          
+          <!--Location-->
+          <div class="form-group" id="locationField">
+            <label for="exampleInputPassword1" id="cityField">City:
+              <br />
+              <select id="CitySelector">
+                <option class="lt" value="volvo">Sofia</option>
+                <option class="lt" value="saab">Plovdiv</option>
+                <option class="lt" value="opel">Opel</option>
+                <option class="lt" value="audi">Audi</option>
+              </select>
+            </label>
           </div>
           
+          <!--Breed-->
+          <div class="form-group" id="breedField">
+            <label for="exampleInputPassword1" id="breedLabel">Breed: <br />
+              <select id="breedSelector">
+                <option class="lt" value="volvo">Volvo</option>
+                <option class="lt" value="saab">Saab</option>
+                <option class="lt" value="opel">Opel</option>
+                <option class="lt" value="audi">Audi</option>
+              </select>
+            </label>
+          </div>
+          
+          <!--ImgUrl-->
           <div class="form-group" id="imgUrl">
-            <label for="exampleInputPassword1" id="imgUrl2">Img Url</label>
-            <input type="text" class="form-control" id="urlField" placeholder="Url" required [(ngModel)]="model.imgUrl" #imgUrl="ngModel" name="imgUrl">
+            <label for="exampleInputPassword1" id="imgUrl2">Img Url <br />
+              <input type="text" class="form-control" id="urlField" placeholder="Url" required [(ngModel)]="model.imgUrl" #imgUrl="ngModel" name="imgUrl">
+            </label>
           </div>
 
+          <!--Vacinated-->
+          <div class="form-check" id="Vaccinated">
+            <label class="form-check-label" >
+              <input class="form-check-input" type="checkbox" value="" checked=""> Is Vaccinated
+            </label>
+          </div>
+
+          <!--Castrated-->
+          <div class="form-check" id="Castrated">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" value="" checked=""> Is Castrated
+            </label>
+          </div>
+          
+          <!--Button-->
           <button type="submit" id="buttonCreatePost" (click)="test()" class="btn btn-primary">Create</button>
         </div>
       </div>
-
+      
+      <!--Picture Preview-->
       <div id="catPiture">
-         <legend>Picture Preview</legend>
-         <img src= {{this.model.imgUrl}}  id="imagePreview2" height="400" width="480" alt="catProfilePic">
+        <legend>Picture Preview</legend>
+        <img src= {{this.model.imgUrl}}  id="imagePreview2" height="500" width="580" alt="catProfilePic">
       </div>
-      </form>
-      </div>
-      
-      
-    
-<div>
+    </form>
+  </div>
+</div>
+          
+          
+
+
+
+
+  
+  

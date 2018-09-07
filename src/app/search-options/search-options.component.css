@@ -1,22 +1,118 @@
 .card{
-    width:340px;
+    width:380px;
     margin: 43px 20px;
     float:left;
-    height:auto;
+    height: 500px;
+    display:block;
+    border-width:4px;
+    top:-22px;
 }
 
+/* Button */
 #searchButton{
     background-color:green;
     border-color:black;
-}
+    position:absolute;
+    width:200px;
+    margin:auto;
+    bottom:30px;
+    right:85px;
+    }
 
 #searchButton:hover{
-transform: scale(1.80);
-
+transform: scale(1.03);
   outline: 0;
   -webkit-box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   -webkit-transform: rotate(0deg);
-          transform: rotate(-10deg);
-          
+          transform: rotate(-5deg);
+}
+
+/*---------- Name ----------*/
+#nameField{
+    border-width:2px;
+    width:160px;
+    display:inline-block;
+    margin:5px 10px;
+}
+
+/*---------- Age ----------*/
+#ageField{
+    border-width:2px;
+    width:70px;
+    text-align:center;
+    
+}
+input[type='number']::-webkit-inner-spin-button, 
+input[type='number']::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    margin: 0;
+}
+#age{
+    width:160px;
+    margin:5px 10px;
+    display:inline-block;
+}
+    
+
+/*---------- Breed ----------*/
+#breedSelector{
+    width:100%;
+    border-width:2px;
+    border-color:black;
+}
+
+#breedField{
+    width:220px;
+    display:inline-block;
+    margin:10px 10px;
+}
+
+select{
+    text-align-last:center; 
+}
+    
+#breedLabel{
+    width:130px;
+    font-weight: 900px;
+    display:inline-block;
+}
+
+/*---------- Location ----------*/
+#cityField{
+    width:130px;
+}
+
+#locationField{
+    width:130px;
+    display:inline-block;
+    margin:10px 10px;
+}
+    
+#CitySelector{
+    border-width:2px;
+    border-color:black;
+    width:100%;
+    display: block;
+    margin: 0 auto;
+    text-align:center;
+}
+
+/*---------- Vaccinated ----------*/
+#Vaccinated{
+    margin:10px 10px;
+    display:inline-block;
+    float:left;
+}
+
+#VaccinatedField{
+    width:auto;
+}
+
+/* Castated */
+#Castrated{
+    margin:10px 10px;
+    display:inline-block;
+    float:right;
+    top:-50px;
 }

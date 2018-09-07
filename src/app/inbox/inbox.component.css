@@ -1,0 +1,79 @@
+#inboxHolder{
+    width:1400px;
+    height: 1600px;
+    background-color:white;
+    margin:auto;
+    border-radius:2%;
+    border-width:4px;
+    border-color:black;
+    border-style:solid;
+}
+
+#allMessages{
+    
+    height:800px;
+    width:1300px;
+    margin:40px auto;
+}
+
+/*Message Template URL*/
+#message{
+    width:1300px;
+    border-style:solid;
+    border-color:black;
+    border-radius:3%;
+    margin: 10px auto;
+    display: flex;
+    background-color:white;
+}
+
+#message:hover { 
+    transform: scale(1.15);
+}
+
+#Title{
+    display:inline-block;
+    color:black;
+    font-weight: 900;
+    margin: 0px 5px;
+    border-right: 3px solid black;
+    border-right-width:3px;
+    width:auto;
+    text-align:center;
+    white-space: pre;
+    width:200px;
+}
+
+#Info{
+    display:inline-block;
+    font-weight:900;
+    margin: 0px 5px;
+    border-right: 3px solid black;
+    border-right-width:3px;
+}
+
+#Date{
+    display: inline-block;
+    font-weight:900;
+    margin: 0px 5px;
+    min-width:200px;
+    width:auto;
+    text-align:center;
+}
+
+#message:hover #Delete{
+    display:block;
+    position:relative;
+    transform: scale(1.5);
+}
+
+#Delete{
+    display:none;
+    position:relative;
+    right:5px;
+    width:auto;
+    font-weight:900;
+    margin: 0px 5px;
+    color:red;
+}
+

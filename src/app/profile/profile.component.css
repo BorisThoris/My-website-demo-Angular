@@ -1,36 +1,30 @@
 #profileDiv{
-   
     height:auto;
     width:450px;
     background-color:white;
     margin:20px auto;
-    border-width: 2cpx;
-    
-
+    border-width:4px;
 }
 
 #profilePic{
-  text-align: left;
-  background-color: #eee;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-  border-style:solid;
-  border-color:black;
-  border-radius:30%;
-  
+    text-align: left;
+    background-color: #eee;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-style:solid;
+    border-color:black;
+    border-radius:30%;
 }
 
 #username{
     text-align:center;
     font-weight: 900;
-    
 }
 
 #picUrl{
-    text-align:center;
-    
+    text-align:center; 
     margin-left: auto;
     margin-right: auto;
 }
@@ -67,4 +61,5 @@ transform: scale(1.20);
 
 #urlField{
     text-align:center;
+    width:300px;
 }

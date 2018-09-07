@@ -1,27 +1,35 @@
 .card{
 position:relative;
 height:auto;
-width:400px;
+width:auto;
 margin: 15px 150px;
 display:inline-block;
 text-align: center;
-
-
 }  
 
-#catPiture{
+#optionsDiv{
     
+}
+
+#pageInfo{
+    width: 94%;
+    margin: 0 auto;
+    
+}
+
+
+#catPiture{
     height:500px;
     width:500px;
     float:right;
-    margin: 70px 150px;
+    margin: 30px 150px;
     position:relative;
     display:inline-block;
     position:relative;
     border-radius:5%;
     text-align:center;
 }
-
+    
 #imagePreview2{
     border-style:solid;
     border-radius:5%;
@@ -30,40 +38,125 @@ text-align: center;
     
 }
 
-
 #age{
-    
-    width:130px;
-    margin:auto;
+    width:160px;
     display:inline-block;
-    float:left;
+    margin:10px 10px;
 }
-
+    
 #number{
+    width:160px;
+    position:relative;
+    margin:10px 10px;
+    right: -9px;
+    top:-42px;
     
-    width:130px;
-    margin:auto;
-    display:inline-block;
-    float:left;
-
 }
-
-
-#description{
-  width:180px;
-    
-  float:right;
   
-}
-
 #desciption2{
-    height:135px;
+    width: 160px;
     resize: none;
 }
 
+#wrapperForDescAndNumb{
+    display: flex;
+    align-items: center;
+    height:160px;
+}
+
+#informationDesc{
+    width:160px;
+    margin:10px 10px;
+    position: absolute;
+    left:212px;
+    top:172px;
+}
+   
+  
 #buttonCreatePost{
     background-color:green;
-    margin: 0px 50px;
+    position:absolute;
+    bottom:30px;
+    width:350px;
+    left:+37px;
+}
+
+#imgUrl{
+   margin:auto;
+   text-align:center;
+   width:320px;
+}
+  
+#imgUrl2{
+    width:320px;
+}
+
+#urlField{
+    width:320px;
+    display:inline-block;
+}
+
+#nameField{  
+    display:inline-block;
+    width:160px;
+    margin:10px 10px;
+}
+
+#optionsDiv{
+    width:430px;
+    height:700px;
+}
+
+#wrapper{
+    margin: 0 auto;
+}
+
+#breedSelector{
+    width:100%;
+    border-width:2px;
+    border-color:black;
+       
+}
+
+#breedField{
+    width:170px;
+    
+    display:inline-block;
+}
+    
+#breedLabel{
+    width:160px;
+}
+
+#cityField{
+    margin:auto; 
+    width:160px;
+}
+
+#locationField{
+   
+    width:160px;
+    display:inline-block;
+    margin:10px 10px;
+}
+    
+
+#CitySelector{
+    border-width:2px;
+    border-color:black;
+    width:100%;
+    display: block;
+    margin: 0 auto;
+    text-align:center;
+}
+
+select { width: 400px; text-align-last:center; }
+
+#Vaccinated{
+   float:left;
+}
+Castrated{
+  float:right;
 }
 
 #buttonCreatePost:hover{
@@ -73,10 +166,11 @@ transform: scale(1.22);
   -webkit-box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
+    
+
+    
 
 
 
-#imgUrl2{
-    margin: auto 50px;
-}
 
+    

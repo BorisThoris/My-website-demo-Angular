@@ -1,0 +1,33 @@
+#Wrapper{
+    width:auto;
+    height:auto;
+    margin:auto 60px;
+    display:inline-block;
+}
+
+#image{
+    display:inline-block;
+}
+
+#Woah{
+    width:300px;
+    position:absolute;
+    display:inline-block;
+    font-size:40px;
+}
+
+#textDiv{
+    width:300;
+    background-color:blue;
+    margin: 190px 30px;
+}
+
+#realWrapper{
+    width: 70%;
+    margin: 30px auto;
+    display:flex;
+    background-color:white;
+    padding:20px;
+    border-radius:3%;
+    border-style:solid;
+}

@@ -18,6 +18,7 @@ html,body
 }
 
 
+
 #footer {
  bottom: 0;
     width: 100%;
@@ -26,8 +27,6 @@ html,body
     font-weight: 900;
     position:fixed;
     font-size:40px; 
-    
-background:white;
 opacity: 0.1;
      /* Height of the footer */
 }

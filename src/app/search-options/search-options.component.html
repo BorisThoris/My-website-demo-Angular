@@ -5,24 +5,53 @@
     <div class="card-body">
       <legend>Search For   Kate</legend>
       
-      <div class="form-group">
-        <label for="exampleInputPassword1">Name</label>
-        <input type="text" class="form-control" id="nameField" placeholder="Name" [(ngModel)]="model.name" name="name">
-      </div>
-
-      <div class="form-group">
-        <label for="exampleInputPassword1">Breed</label>
-        <input type="text" class="form-control" id="breedField" placeholder="Breed" [(ngModel)]="model.breed" name="breed">
+      <!--Breed-->
+      <div class="form-group" id="breedField">
+        <label for="exampleInputPassword1" id="breedLabel">Breed: <br />
+          <select id="breedSelector">
+            <option class="lt" value="volvo">Volvo</option>
+            <option class="lt" value="saab">Saab</option>
+            <option class="lt" value="opel">Opel</option>
+            <option class="lt" value="audi">Audi</option>
+          </select>
+        </label>
       </div>
       
-      <div class="form-group">
-        <div id="age">
-          <label for="exampleInputPassword1">Age</label>
-          <input type="Number" class="form-control" id="ageField" placeholder="Age" required [(ngModel)]="model.age" name="age">
-        </div>
+      <!--Location-->
+      <div class="form-group" id="locationField">
+        <label for="exampleInputPassword1" id="cityField">City:
+          <br />
+          <select id="CitySelector">
+            <option class="lt" value="volvo">Sofia</option>
+            <option class="lt" value="saab">Plovdiv</option>
+            <option class="lt" value="opel">Opel</option>
+            <option class="lt" value="audi">Audi</option>
+          </select>
+        </label>
       </div>
 
-      <button (click)="test()" type="submit" id="searchButton" class="btn btn-primary">Search</button>
+      <!--Age-->
+      <div id="age">
+        <label for="exampleInputPassword1">Age <input type="Number" class="form-control" id="ageField" placeholder="Age" required
+            [(ngModel)]="model.age" name="age"></label>
+      </div>
+      
+      <!--Vacinated-->
+      <div class="form-check" id="Vaccinated">
+        <label class="form-check-label" id="VaccinatedField">
+          <input class="form-check-input" type="checkbox" value="" checked=""> Is Vaccinated
+        </label>
+      </div>
+
+      <!--Castrated-->
+      <div class="form-check" id="Castrated">
+        <label class="form-check-label" id="CastratedField">
+          <input class="form-check-input"  type="checkbox" value="" checked=""> Is Castrated
+        </label>
+      </div>
+
+      <!--Button-->
+      <button  (click)="test()" type="submit" id="searchButton" class="btn btn-primary">Search</button>
     </div>
   </div>
   </form>

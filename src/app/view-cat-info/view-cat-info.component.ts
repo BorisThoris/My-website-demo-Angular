@@ -46,9 +46,10 @@ export class ViewCatInfoComponent implements OnInit {
     //DELETE REQUEST
       if(this.isAdmin() || acl === userId)
         {
+          this.toastr.info("Deleting Cat!")
           const id = this.route.snapshot.paramMap.get('id');
           this.remote.deleteCat(id).subscribe((data)=>{
-            this.toastr.info("Cat Deleted!")
+            this.toastr.success("Cat Deleted!")
             this.router.navigate(["/viewAll"])
           }, (error: any) => {
             this.toastr.error("Creation Error");
@@ -84,18 +85,25 @@ export class ViewCatInfoComponent implements OnInit {
         this.toastr.error("Cat Should Be Alive!");
       }
       
-      else if(this.isAdmin() || acl===userId)
-       {
-         //UPDATE REQUEST
-         this.remote.UpdateCat(name,breed,age,contactNumber,information,imgUrl, id).subscribe((data)=>{
-         this.toastr.info("Cat Updated!")
-          }, (error: any) => {
-           this.toastr.error("Creation Error");})} 
+      else if(this.isAdmin() || acl===userId){
+        //UPDATE REQUEST
+        this.toastr.info("Updating   Cat!")
+        this.remote.UpdateCat(name,breed,age,contactNumber,information,imgUrl, id).subscribe((data)=>{
+        this.toastr.info("Cat Updated!")
+      }, (error: any) => {
+           this.toastr.error("Creation Error");
+          })}
       else{
          this.toastr.error("Not Admin or Creator")}
-        }
       }
- 
+
+
+      sendMessageFunc(){
+        console.log("Message Menu Plox")
+      }
+    
+}
+      
        
       
         

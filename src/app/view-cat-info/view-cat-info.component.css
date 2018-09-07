@@ -1,22 +1,10 @@
-#sadBox{
-width:auto;
-height:auto;
-margin: 20px 40px;
-display:inline-block;
-background-color:white;
-border-radius:10%;
-border-width:4px;
-
-}
 
 #sadBox2{
 width:500px;
 height:auto;
 margin:20px;
 float:right;
-
 background-color:white;
-
 }
 
 #genText{
@@ -28,15 +16,15 @@ background-color:white;
 }
 
 #NameArea{
-resize: none;
+    resize: none;
 }
 
 #BreedArea{
-resize: none;
+    resize: none;
 }
 
 #NumberArea{
-resize: none;
+    resize: none;
 }
 
 #AgeArea{
@@ -57,11 +45,9 @@ resize: none;
 #dangerButton:hover{
 transform: scale(1.20);
   background-color:rgb(110, 3, 3);
-
   outline: 0;
   -webkit-box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-  box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-  
+  box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6); 
 }
 
 #changeButton{
@@ -72,8 +58,6 @@ transform: scale(1.20);
 
 #changeButton:hover{
 transform: scale(1.20);
- 
-
   outline: 0;
   -webkit-box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
@@ -82,5 +66,32 @@ transform: scale(1.20);
 
 #catImg{
     border-radius:10%;
+    border-style:solid;
+    border-color:black;
+    margin: 60px 20px;
+    display:inline-block;
+    background-color:white;
+    border-radius:10%;
+    border-width:4px;
 }
 
+
+#sendPmButton{
+    margin:auto;
+    position:relative;
+    right: -50px;
+    border-width:2px;
+    border-color:black;
+}
+
+#sendPmButton:hover{
+transform: scale(1.20);
+  outline: 0;
+  -webkit-box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+#wrapper{
+    width: 95%;
+    margin: 0 auto;
+}
