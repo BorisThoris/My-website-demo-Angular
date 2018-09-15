@@ -41,7 +41,7 @@ transform: scale(1.10);
 }
 
 #profilePic:hover{
-    background-color: red;
+    
 }
 
 #ProfilePicImage{
@@ -55,12 +55,15 @@ transform: scale(1.10);
 
 /* All Items Hover */
 .nav-item:hover a{
-    transform: scale(1.15)
+    transform: scale(1.10);
+    border-style:solid;
+    border-color:lightgray;
+    border-width:2px;
 }
 
 /* All Items */
 .nav-item{
-    font-size: 35px;
+    font-size: 30px;
 }
 
 /* Logout */
@@ -86,7 +89,7 @@ transform: scale(1.10);
 /* NavBar */
 #navBar{
     margin: 10px 20px;
-    border-width:2px;
+    border-width:4px;
     white-space: nowrap;
 }
 
@@ -94,3 +97,4 @@ transform: scale(1.10);
 @keyframes sad { 0%{transform: scale(1);} 50%{transform: scale(1.15);} 100%{transform: scale(1);} }
 @keyframes logoAnimation { 0%{transform: scale(1);} 50%{transform: scale(1.15);} 100%{transform: scale(1);} }
 @keyframes newMsg { 0% {color:yellow;} 50% { color:rgb(206, 34, 34) } 100% { color:yellow;} } 
+@keyframes ants2 { to { background-position: 100% 100% } }

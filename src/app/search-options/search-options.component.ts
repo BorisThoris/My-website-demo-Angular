@@ -8,7 +8,7 @@ import { Cat } from '../cat';
 export class SearchOptionsComponent implements OnInit {
   model:Cat;
   constructor() {
-    this.model = new Cat("","",0,null,null,null)
+    this.model = new Cat("","",0,null,null,null, null, null, null)
    }
   test(){console.log(this.model)}
   ngOnInit() {

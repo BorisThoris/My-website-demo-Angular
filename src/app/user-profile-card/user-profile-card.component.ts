@@ -16,7 +16,7 @@ export class UserProfileCardComponent implements OnInit {
   
   
   testFunc(){
-    if(sessionStorage.getItem("isAdmin")==="Yes"){
+    if(localStorage.getItem("isAdmin")==="Yes"){
       this.remote.DeleteUser(this.user._id).subscribe((data)=>{
         this.changedUsers.emit(this.user);
         this.toastr.info("User Deleted")

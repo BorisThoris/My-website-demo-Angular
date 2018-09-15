@@ -15,9 +15,9 @@ export class ProfileComponent implements OnInit {
   picurl:String;
   
   constructor(private remote: remote, private toastr: ToastrService ){
-    this.model = new User(sessionStorage.getItem("username"), null, sessionStorage.getItem("picUrl"),null)
-    this.username= sessionStorage.getItem("username");
-    this.picurl = sessionStorage.getItem("profilePic");
+    this.model = new User(localStorage.getItem("username"), null, localStorage.getItem("picUrl"),null)
+    this.username = localStorage.getItem("username");
+    this.picurl = localStorage.getItem("profilePic");
     
    
   }
@@ -25,12 +25,12 @@ export class ProfileComponent implements OnInit {
   //UPDATE FUNC
   testfunc(){
     console.log(this.model.username);
-    this.remote.updateUser(this.model.username, null, sessionStorage.getItem("userId"), this.model.picUrl).subscribe((UserData) =>
+    this.remote.updateUser(this.model.username, null, localStorage.getItem("userId"), this.model.picUrl).subscribe((UserData) =>
     {
       this.remote.saveSession(UserData);
-      this.model = new User(sessionStorage.getItem("username"), null, sessionStorage.getItem("picUrl"), null)
-      this.username = sessionStorage.getItem("username");
-      this.picurl = sessionStorage.getItem("profilePic");
+      this.model = new User(localStorage.getItem("username"), null, localStorage.getItem("picUrl"), null)
+      this.username = localStorage.getItem("username");
+      this.picurl = localStorage.getItem("profilePic");
       this.toastr.info("User Information Changed!")
       
     });
@@ -41,7 +41,7 @@ export class ProfileComponent implements OnInit {
   }
    
   isAdmin(){
-    if(sessionStorage.getItem("isAdmin")!=="undefined"){
+    if (localStorage.getItem("isAdmin")!=="undefined"){
       return true;
     }else{
       return false;

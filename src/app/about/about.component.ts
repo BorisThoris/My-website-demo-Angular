@@ -28,7 +28,7 @@ export class AboutComponent implements OnInit {
   
   ngOnInit() {
     console.log("loldsds");
-    if(sessionStorage.length===0)
+    if(localStorage.length===0)
       {
         console.log("lol, inside if")
         this.remote.login("Guest2", "Guest2").subscribe((data)=>{

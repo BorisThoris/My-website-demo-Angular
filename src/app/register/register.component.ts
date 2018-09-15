@@ -31,6 +31,7 @@ export  class RegisterComponent implements OnInit {
           this.toastr.error("Passwords Should Match!")}
         //REG
         else{
+        this.toastr.info("Registering!")
         this.remote.register(this.model.username, this.model.password, null).subscribe((Data)=>{
           this.toastr.success("Registered!");
           this.router.navigate(["/login"])

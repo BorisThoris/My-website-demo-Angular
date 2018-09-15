@@ -15,7 +15,7 @@ export class ViewCatInfoComponent implements OnInit {
   Cat;
 
   constructor(private route: ActivatedRoute, private remote: remote, private router: Router, private toastr: ToastrService) {
-    this.model = new Cat("", "", 0, 0, "", "", "","");
+    this.model = new Cat("", "", 0, 0, "", "", "","", "");
    }
 
     ngOnInit() {
@@ -31,7 +31,7 @@ export class ViewCatInfoComponent implements OnInit {
   }
       
     isAdmin(){
-      if(sessionStorage.getItem("isAdmin")==="Yes"){
+      if(localStorage.getItem("isAdmin")==="Yes"){
         return(true);
       }
     }
@@ -42,7 +42,7 @@ export class ViewCatInfoComponent implements OnInit {
       
     //VALIDATION
     let acl = this.model._acl.creator;
-    let userId = sessionStorage.getItem("userId");
+    let userId = localStorage.getItem("userId");
     //DELETE REQUEST
       if(this.isAdmin() || acl === userId)
         {
@@ -99,7 +99,8 @@ export class ViewCatInfoComponent implements OnInit {
 
 
       sendMessageFunc(){
-        console.log("Message Menu Plox")
+        const id = this.route.snapshot.paramMap.get('id');
+        this.router.navigate(['/pm-create/' + id])
       }
     
 }

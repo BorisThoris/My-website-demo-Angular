@@ -5,9 +5,9 @@
     <img id="profilePic" src= {{this.model.picUrl}} alt="Smiley face" height="250" width="300">
     <h3 id="username">{{username}}: <input type="text" id="usernameField" class="form-control" placeholder="Username Goes Here" id="usernameField" [(ngModel)]="model.username" name="username"></h3>
     <div id="picUrl" class="form-group">
-      <legend id="IsAdmin"><a *ngIf="isAdmin()">Is Admin: Yes</a></legend>
-      <label id="inputField" class="col-form-label" for="inputDefault">Pic Url: <input type="text"  class="form-control" placeholder="Url Goes Here" id="urlField" [(ngModel)]="model.picUrl" name="picUrl"></label>
-      <button (click)="testfunc()" type="button" id="changeButton" class="btn btn-success">Change</button>
+      <legend id="IsAdmin"><a *ngIf="isAdmin()">Админ: Да</a></legend>
+      <label id="inputField" class="col-form-label" for="inputDefault">Линк За Снимка: <input type="text"  class="form-control" placeholder="Url Goes Here" id="urlField" [(ngModel)]="model.picUrl" name="picUrl"></label>
+      <button (click)="testfunc()" type="button" id="changeButton" class="btn btn-success">Промени</button>
     </div>
   
   </div>

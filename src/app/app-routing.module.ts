@@ -16,6 +16,8 @@ import { MessagesComponent } from './messages/messages.component'
 import { ViewCatInfoComponent } from './view-cat-info/view-cat-info.component'
 import { InboxComponent } from './inbox/inbox.component'
 import { IncorrectPageComponent } from './incorrect-page/incorrect-page.component'
+import { PmViewComponent } from './pm-view/pm-view.component'
+import { PmWriterComponent } from './pm-writer/pm-writer.component'
 
 
 
@@ -36,6 +38,8 @@ const routes : Routes = [
   { path: 'messages', component: MessagesComponent },
   { path: 'view-cat/:id', component: ViewCatInfoComponent },
   { path: 'Inbox', component: InboxComponent },
+  { path: 'pm-view/:id', component: PmViewComponent },
+  { path: 'pm-create/:id', component: PmWriterComponent },
   { path: '**', component: IncorrectPageComponent }
 
   

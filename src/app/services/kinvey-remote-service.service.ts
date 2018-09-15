@@ -16,21 +16,21 @@ export default class KinveyRemoteServiceService {
   makeAuth(type) {
     return type === 'basic'
       ? 'Basic ' + btoa(appKey + ':' + appSecret)
-      : 'Kinvey ' + sessionStorage.getItem('authtoken');
+      : 'Kinvey ' + localStorage.getItem('authtoken');
   }
   
   //IS AUTH
   isAuth() {
-    return sessionStorage.getItem('authtoken') !== null;
+    return localStorage.getItem('authtoken') !== null;
   }
 
   //SAVE SESSION
   saveSession(userData) {
-    sessionStorage.setItem('authtoken', userData._kmd.authtoken);
-    sessionStorage.setItem('username', userData.username);
-    sessionStorage.setItem('userId', userData._id);
-    sessionStorage.setItem('picUrl', userData.profilePic);
-    sessionStorage.setItem('isAdmin', userData.isAdmin);
+    localStorage.setItem('authtoken', userData._kmd.authtoken);
+    localStorage.setItem('username', userData.username);
+    localStorage.setItem('userId', userData._id);
+    localStorage.setItem('picUrl', userData.profilePic);
+    localStorage.setItem('isAdmin', userData.isAdmin);
   }
 
   //POST
@@ -91,12 +91,37 @@ export default class KinveyRemoteServiceService {
   }
 
   //CREATE CAT
-  CreateCat(name, breed, age, contactNumber, information, imgUrl ) {
+  CreateCat(name, breed, age, contactNumber, information, imgUrl, vaccinated, castrated, city) {
     // /appdata/:appKey/:collectionName HTTP/1.1
-    let obj = { name, breed, age, contactNumber, information, imgUrl };
+    let obj = { name, breed, age, contactNumber, information, imgUrl, vaccinated, castrated, city};
     let url = kinveyBaseUrl + 'appdata' + "/" + appKey + "/" + "Cats";
     let data = obj;
     return (this.post(url, data, 'kinvey'));
+  }
+
+  //CREATE MESSAGE
+  CreateMessage(message, receiver, sender, open, senderName, madeDate, catName) {
+    // /appdata/:appKey/:collectionName HTTP/1.1
+    let obj = { message, receiver, sender, open, senderName, madeDate, catName};
+    let url = kinveyBaseUrl + 'appdata' + "/" + appKey + "/" + "Messages";
+    let data = obj;
+    return (this.post(url, data, 'kinvey'));
+  }
+
+  //UPDATE MESSAGE
+  UpdateMessage(catName, senderName, open, sender, receiver, message, madeDate, id) {
+    ///appdata/:appKey/:collectionName/:id HTTP/1.1
+    let obj = { catName, senderName, open, sender, receiver, message, madeDate };
+    let url = kinveyBaseUrl + 'appdata' + '/' + appKey + '/' + "Messages" + "/" + id
+    let data = obj;
+    return (this.put(url, data, 'kinvey '))
+  }
+
+  //DELETE MESSAGE
+  DeleteMessage(id) {
+    //DELETE /appdata/:appKey/:collectionName/:id?query=... HTTP/1.1
+    let url = kinveyBaseUrl + 'appdata' + '/' + appKey + '/' + "Messages" + "/" + id
+    return (this.delete(url, id, 'kinvey '))
   }
 
   //GET ALL CATS
@@ -151,6 +176,22 @@ export default class KinveyRemoteServiceService {
     // /appdata/:appKey/:collectionName HTTP/1.1
     // return remote.get('appdata', "Products", 'kinvey');
     let url = kinveyBaseUrl + 'appdata' + "/" + appKey + "/" + "Messages";
+    return (this.get(url, 'kinvey'));
+  }
+
+  //GET MESSAGES
+  GetAllMessagesById(id) {
+    // /appdata/:appKey/:collectionName HTTP/1.1
+    // return remote.get('appdata', "Products", 'kinvey');
+    let url = kinveyBaseUrl + 'Messages' + "/" + appKey + "/" + id;
+    return (this.get(url, 'kinvey'));
+  }
+
+  //GET MESSAGE BY ID
+  GetMessageById(id) {
+    //GET /appdata/:appKey/:collectionName/:id
+    //let url = kinveyBaseUrl + 'appdata' + "/" + appKey + "/" + "Cats" + "/" + id
+    let url = kinveyBaseUrl + "appdata" + "/" + appKey + "/" + "Messages" + "/" + id;
     return (this.get(url, 'kinvey'));
   }
 

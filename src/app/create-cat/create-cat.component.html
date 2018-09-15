@@ -1,98 +1,100 @@
 <div id="pageInfo">
-    <div id="wrapper">
-      <form #form="ngForm">
+    <form id="flex" #form="ngForm">
       <div class="card" id="optionsDiv">
-        <div class="card-body">
+        <div id="optionsDiv2" class="card-body">
           <!--Title-->
-          <legend>Post Your Kate</legend>
-
+          <legend id="postKate">Информация За Котката</legend>
+          
           <!--Name-->
-          <div class="form-group" id="nameField">
-            <label id="name" for="exampleInputEmail1">Name
-            <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Cat name" required [(ngModel)]="model.name" name="name">
+          <div class="form-group" id="name">
+            <label for="exampleInputPassword1">Име
+              <br/>
+              <input type="String" class="form-control" id="nameField" placeholder="Name" required [(ngModel)]="model.name" name="name">
             </label>
           </div>
-         
           <!--Age-->
           <div class="form-group" id="age">
-              <label for="exampleInputPassword1">Age
+              <label for="exampleInputPassword1">Възраст години
                 <input type="Number" class="form-control" id="ageField" placeholder="Age" required [(ngModel)]="model.age" name="age">
               </label>
           </div>
           
-        <div id="wrapperForDescAndNumb">
-          <!--Number-->
-          <label for="exampleInputPassword1" id="number"> Contact Number <br />
-            <input type="Number" class="form-control" id="numberField" placeholder="Number" required [(ngModel)]="model.contactNumber" name="contactNumber">
-          </label>
-        
-          
-          
-          <!--Description-->
-          <label for="exampleTextarea" id="informationDesc">Information 
-            <textarea class="form-control" id="desciption2" placeholder="Description" rows="4" required [(ngModel)]="model.information" name="information"></textarea>
-          </label>
-        </div>
-          
+          <div id="wrapperForDescAndNumb">
+            <!--Number-->
+            <label for="exampleInputPassword1" id="number"> Номер за връзка <br />
+              <input type="Number" class="form-control" id="numberField" placeholder="Number" required [(ngModel)]="model.contactNumber" name="contactNumber">
+            </label>
+            
+            <!--Description-->
+            <label for="exampleTextarea" id="informationDesc">Информация 
+              <textarea class="form-control" id="desciption2" placeholder="Може да се промени след като е публикувана" rows="8" required [(ngModel)]="model.information" name="information"></textarea>
+            </label>
+          </div>
           
           <!--Location-->
           <div class="form-group" id="locationField">
-            <label for="exampleInputPassword1" id="cityField">City:
+            <label for="exampleInputPassword1" id="cityField">Регион:
               <br />
-              <select id="CitySelector">
-                <option class="lt" value="volvo">Sofia</option>
-                <option class="lt" value="saab">Plovdiv</option>
-                <option class="lt" value="opel">Opel</option>
-                <option class="lt" value="audi">Audi</option>
+              <select id="CitySelector" placeholder="улична" required [(ngModel)]="model.city" name="city">
+                <option *ngFor="let c of cities" [value]="c">{{c}}</option>
               </select>
             </label>
           </div>
           
           <!--Breed-->
-          <div class="form-group" id="breedField">
-            <label for="exampleInputPassword1" id="breedLabel">Breed: <br />
-              <select id="breedSelector">
-                <option class="lt" value="volvo">Volvo</option>
-                <option class="lt" value="saab">Saab</option>
-                <option class="lt" value="opel">Opel</option>
-                <option class="lt" value="audi">Audi</option>
+          <div class="form-group" id="breedField" >
+            <label for="exampleInputPassword1" id="breedLabel">Порода: <br />
+              <select id="breedSelector" placeholder="улична" required [(ngModel)]="model.breed" name="breed">
+                <option *ngFor="let b of breeds" [value]="b">{{b}}</option>
               </select>
             </label>
           </div>
           
           <!--ImgUrl-->
           <div class="form-group" id="imgUrl">
-            <label for="exampleInputPassword1" id="imgUrl2">Img Url <br />
-              <input type="text" class="form-control" id="urlField" placeholder="Url" required [(ngModel)]="model.imgUrl" #imgUrl="ngModel" name="imgUrl">
+            <label for="exampleInputPassword1" id="imgUrl2">Линк за снимка<br />
+              <input type="text" class="form-control" id="urlField" placeholder="Линк 1" required [(ngModel)]="model.imgUrl" #imgUrl="ngModel" name="imgUrl">
+              <input type="text" class="form-control" id="urlField" placeholder="Линк 2 незадължителен" required [(ngModel)]="model.imgUrl2" #imgUrl="ngModel" name="imgUrl2">
+              <input type="text" class="form-control" id="urlField" placeholder="Линк 3 незадължителен" required [(ngModel)]="model.imgUrl3" #imgUrl="ngModel" name="imgUrl3">
+              <input type="text" class="form-control" id="urlField" placeholder="Линк 4 незадължителен" required [(ngModel)]="model.imgUrl4" #imgUrl="ngModel" name="imgUrl4">
             </label>
           </div>
 
           <!--Vacinated-->
           <div class="form-check" id="Vaccinated">
             <label class="form-check-label" >
-              <input class="form-check-input" type="checkbox" value="" checked=""> Is Vaccinated
+              <input class="form-check-input" type="checkbox" value="" checked="" required [(ngModel)]="model.vaccinated" #imgUrl="ngModel" name="vaccinated"> Ваксинирана
             </label>
           </div>
 
           <!--Castrated-->
           <div class="form-check" id="Castrated">
             <label class="form-check-label">
-              <input class="form-check-input" type="checkbox" value="" checked=""> Is Castrated
+              <input class="form-check-input" type="checkbox" value="" checked="" required [(ngModel)]="model.castrated" #imgUrl="ngModel" name="castrated"> Кастрирана
             </label>
-          </div>
+          </div>  
           
           <!--Button-->
-          <button type="submit" id="buttonCreatePost" (click)="test()" class="btn btn-primary">Create</button>
+          <button type="submit" id="buttonCreatePost" (click)="test()" class="btn btn-primary">Създай</button>
         </div>
       </div>
       
       <!--Picture Preview-->
       <div id="catPiture">
-        <legend>Picture Preview</legend>
-        <img src= {{this.model.imgUrl}}  id="imagePreview2" height="500" width="580" alt="catProfilePic">
+        <legend>Преглед На Снимки</legend>
+        <a nvs-animation-delay="250" nvs-animation-type="fadeIn" *ngIf="is1()"><img src = {{model.imgUrl}}  id="imagePreview2" height="500" width="580" alt="catProfilePic"></a>
+        <a *ngIf="is2()"><img src = {{model.imgUrl2}} id="imagePreview2" height="500" width="580" alt="catProfilePic"></a>
+        <a *ngIf="is3()"><img src = {{model.imgUrl3}} id="imagePreview2" height="500" width="580" alt="catProfilePic"></a>
+        <a *ngIf="is4()"><img src = {{model.imgUrl4}} id="imagePreview2" height="500" width="580" alt="catProfilePic"></a>
+        <div id="arrowWrapper">
+        <img (click)="right()" src="http://oi68.tinypic.com/1q1seo.jpg" id="arrowRigth" height="110" width="200" alt="catProfilePic">
+        <legend id="indexNumber">{{imgIndex}}</legend>
+        <img (click)="left()" src="http://oi68.tinypic.com/1q1seo.jpg" id="arrowLeft" height="110" width="200" alt="catProfilePic">
+        </div>
       </div>
+
+
     </form>
-  </div>
 </div>
           
           

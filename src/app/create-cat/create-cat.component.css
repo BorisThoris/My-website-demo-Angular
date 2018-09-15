@@ -1,33 +1,44 @@
-.card{
-position:relative;
-height:auto;
-width:auto;
-margin: 15px 150px;
-display:inline-block;
-text-align: center;
-}  
+#name{
+    width:200px;
+}
+
+#postKate{
+    font-size:35px;
+    color:green;
+    text-shadow: 2px 2px black;
+}
 
 #optionsDiv{
-    
+    display:inline-block;
+    width:430px;
+    margin: 15px 150px;
+    text-align: center;
+}
+
+#optionsDiv2{
+width:430px;
 }
 
 #pageInfo{
     width: 94%;
     margin: 0 auto;
-    
 }
 
+#flex{
+    display:flex;
+    justify-content: center;
+    flex-wrap:wrap;
+}
 
+/* Picture */
 #catPiture{
     height:500px;
-    width:500px;
-    float:right;
-    margin: 30px 150px;
-    position:relative;
+    width:580px;
     display:inline-block;
-    position:relative;
+    margin: 30px 150px;
     border-radius:5%;
     text-align:center;
+    
 }
     
 #imagePreview2{
@@ -35,33 +46,38 @@ text-align: center;
     border-radius:5%;
     background-color:white;
     padding: 10px;
-    
+    display:inline-block;
+    transition: 0.7s;
 }
 
+/* Age */
 #age{
+    position:relative;
     width:160px;
-    display:inline-block;
     margin:10px 10px;
+    right:-11px;
+    top:-30px;
 }
-    
+
+label{
+    font-size:25px;
+}
+
+/* Number */
 #number{
     width:160px;
     position:relative;
     margin:10px 10px;
-    right: -9px;
-    top:-42px;
-    
+    right: -11px;
+    top:-30px;
 }
   
+/* Desc */
 #desciption2{
     width: 160px;
     resize: none;
-}
-
-#wrapperForDescAndNumb{
-    display: flex;
-    align-items: center;
-    height:160px;
+    border-width:2px;
+    height:288px;
 }
 
 #informationDesc{
@@ -69,18 +85,26 @@ text-align: center;
     margin:10px 10px;
     position: absolute;
     left:212px;
-    top:172px;
+    top:70px;
 }
-   
-  
+
+#wrapperForDescAndNumb{
+    display: flex;
+    align-items: center;
+    height:70px;
+}
+
+/* Button */
 #buttonCreatePost{
     background-color:green;
     position:absolute;
-    bottom:30px;
+    bottom:10px;
     width:350px;
     left:+37px;
+    
 }
 
+/* Url */
 #imgUrl{
    margin:auto;
    text-align:center;
@@ -92,35 +116,38 @@ text-align: center;
 }
 
 #urlField{
+    margin: 5px 2px;
     width:320px;
     display:inline-block;
 }
 
+/* Name */
 #nameField{  
     display:inline-block;
     width:160px;
     margin:10px 10px;
 }
 
+/* OptinsDiv */
 #optionsDiv{
     width:430px;
-    height:700px;
+    height:900px;
+    display:flex;
 }
 
 #wrapper{
     margin: 0 auto;
 }
 
+/* Breed */
 #breedSelector{
     width:100%;
     border-width:2px;
     border-color:black;
-       
 }
 
 #breedField{
     width:170px;
-    
     display:inline-block;
 }
     
@@ -128,18 +155,17 @@ text-align: center;
     width:160px;
 }
 
+/* location */
 #cityField{
     margin:auto; 
     width:160px;
 }
 
 #locationField{
-   
     width:160px;
     display:inline-block;
     margin:10px 10px;
 }
-    
 
 #CitySelector{
     border-width:2px;
@@ -152,15 +178,56 @@ text-align: center;
 
 select { width: 400px; text-align-last:center; }
 
+/* Vaccinated */
 #Vaccinated{
    float:left;
 }
-Castrated{
+/* Castrated */
+#Castrated{
   float:right;
+  left:-30px;
+}
+
+/* Arrow Left */
+#arrowLeft{
+    display:inline-block;
+    position:relative;
+    left:-380px;
+    transform: rotate(180deg);
+    margin: 10px 10px;
+    cursor: pointer;
+}
+
+#arrowLeft:hover{
+    transform:scale(1.18) rotate(180deg);
+    transition: 0.7s;
+}
+    
+/* Arrow Rigth */
+#arrowRigth{
+    display:inline-block;
+    position:relative;
+    right:-380px;
+    margin: 10px 10px;
+    cursor: pointer;
+}
+
+#arrowRigth:hover{
+    transform:scale(1.18);
+    transition: 0.7s;
+}
+
+/*arrowWrapper */
+#arrowWrapper{
+    display:flex;
+}
+
+#indexNumber{
+    font-size:100px;
 }
 
 #buttonCreatePost:hover{
-transform: scale(1.22);
+transform: scale(1.12);
 
   outline: 0;
   -webkit-box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);

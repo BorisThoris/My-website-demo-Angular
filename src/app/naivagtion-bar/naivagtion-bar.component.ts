@@ -13,11 +13,13 @@ export class NaivagtionBarComponent implements OnInit {
   model: User;
   username: string;
   imgUrl: string;
-
+  newMessages: number;
+  messages;
   constructor(private remote: remote, private router: Router, private toastr: ToastrService) {
-    this.model = new User(sessionStorage.getItem("username"), null,sessionStorage.getItem("picUrl"),null)
+    this.model = new User(localStorage.getItem("username"), null,localStorage.getItem("picUrl"),null)
     this.username = this.model.username;
     this.imgUrl = this.model.picUrl;
+    this.newMessages;
    }
   
   
@@ -25,9 +27,9 @@ export class NaivagtionBarComponent implements OnInit {
     this.remote.logout().subscribe((dataBase)=>{
       console.log("logged out");
       this.toastr.info("Logged out!");
-      sessionStorage.clear();
+      localStorage.clear();
       this.router.navigate(['/about']);
-      if (sessionStorage.length === 0) {
+      if (localStorage.length === 0) {
         console.log("lol, inside if")
         this.remote.login("Guest2", "Guest2").subscribe((data) => {
           this.remote.saveSession(data);
@@ -38,8 +40,8 @@ export class NaivagtionBarComponent implements OnInit {
   }
 
   isAuth(){
-    if (sessionStorage.getItem('authtoken') !== null && sessionStorage.getItem("username")!=="Guest2"){
-      this.model = new User(sessionStorage.getItem("username"), null, sessionStorage.getItem("picUrl"), null)
+    if (localStorage.getItem('authtoken') !== null && localStorage.getItem("username")!=="Guest2"){
+      this.model = new User(localStorage.getItem("username"), null, localStorage.getItem("picUrl"), null)
       this.username = this.model.username;
       this.imgUrl = this.model.picUrl;
       return true;
@@ -48,31 +50,51 @@ export class NaivagtionBarComponent implements OnInit {
   }
 
   isGuest(){
-    if (sessionStorage.getItem("username") === "Guest2") {
+    if (localStorage.getItem("username") === "Guest2") {
       return true;
     }
     else return false;
   }
 
   isNotGuest(){
-    if(sessionStorage.getItem("username")==="Guest2"){
+    if(localStorage.getItem("username")==="Guest2"){
       return false;
     }
   }
 
   isAdmin(){
-    if(sessionStorage.getItem("isAdmin")==="Yes"){
+    if(localStorage.getItem("isAdmin")==="Yes"){
       return true;
     }
   }
 
 
   isNotAuth(){
-    return sessionStorage.getItem('authtoken') === null;
+    return localStorage .getItem('authtoken') === null;
   }
 
   ngOnInit() {
-    
+    let id = localStorage.getItem("userId")
+    this.newMessages=0;
+    this.remote.GetAllMessages().subscribe((messages) => {
+      for(let index in messages){
+        //VARIABLES
+        let receiver = messages[index]["receiver"];
+        let open = messages[index]["open"]
+        //CODE FOR NewMessages
+        if(id===receiver && open==="false" ){
+        console.log("receiver")
+        this.newMessages++;
+        }
+      }
+      this.messages = messages;
+    })
+  }
+
+  messagesNew(){
+    if(this.newMessages===0){
+      return false
+    } else return true;
   }
 
 }

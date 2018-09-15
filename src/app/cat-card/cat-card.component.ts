@@ -18,16 +18,15 @@ export class CatCardComponent implements OnInit {
     }
 
   ngOnInit() {
-    console.log(this.cat._acl);
   }
-
+d
   loadInfo(){
     let id = this.cat._id;
     this.router.navigate(['/view-cat/' + id])
   }
   
   isCreator(){
-    let user = sessionStorage.getItem("userId");
+    let user = localStorage.getItem("userId");
     let catCreator = this.cat._acl.creator;
     if(user===catCreator){
       return(true);

@@ -1,6 +1,7 @@
-<div id="message" (click)="navigate()">
-  <legend id="Title"> KirilKirilKiril </legend>
-  <legend id="Info">dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</legend>
-  <legend id="Date">2018-08-30 17:33</legend>
+
+<div id="message" >
+  <legend id="Title" (click)="navigate()"> {{message.senderName}} </legend>
+  <legend id="Info" (click)="navigate()">{{message.catName}}</legend>
+  <legend id="Date" >{{message.madeDate}}</legend>
   <button type="button" id="Delete" (click)="deleteFunc()">X</button>
 </div>

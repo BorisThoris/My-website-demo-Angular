@@ -38,7 +38,8 @@ export class LogInComponent implements OnInit {
         {
           this.remote.saveSession(userData);
           this.toastr.success("Logged in!");
-          this.router.navigate(['/viewAll'])
+          location.reload();
+          this.router.navigate(['/about'])
         }, (error: any) => {
           this.toastr.error("LogIn Error");
         })

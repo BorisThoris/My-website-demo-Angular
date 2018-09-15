@@ -1,11 +1,16 @@
 <div id="inboxHolder">
+  
+  
+  <div id="message">
+    <legend id="Title">Потребител</legend>
+    <legend id="Info">Обява</legend>
+    <legend id="Date">Дата</legend>
+  </div>
+  
   <div id="allMessages">
+    <app-pm-template  *ngFor="let m of messages"  [message]="m" (deletedMessage)="getMessegesAgain($event)"></app-pm-template>
 
-
-    <app-pm-template></app-pm-template>
-    <app-pm-template></app-pm-template>
-    <app-pm-template></app-pm-template>
-    <app-pm-template></app-pm-template> 
 
   </div>
 </div>
+

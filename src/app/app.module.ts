@@ -30,6 +30,9 @@ import { SlideshowModule } from 'ng-simple-slideshow';
 import { InboxComponent } from './inbox/inbox.component';
 import { PmTemplateComponent } from './pm-template/pm-template.component';
 import { IncorrectPageComponent } from './incorrect-page/incorrect-page.component';
+import { PmViewComponent } from './pm-view/pm-view.component';
+import { PmTemplate2Component } from './pm-template2/pm-template2.component';
+import { PmWriterComponent } from './pm-writer/pm-writer.component';
 
 
 
@@ -57,6 +60,9 @@ import { IncorrectPageComponent } from './incorrect-page/incorrect-page.componen
     InboxComponent,
     PmTemplateComponent,
     IncorrectPageComponent,
+    PmViewComponent,
+    PmTemplate2Component,
+    PmWriterComponent,
     
     
     

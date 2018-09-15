@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import remote from "../services/kinvey-remote-service.service.js";
 
 @Component({
@@ -15,10 +15,8 @@ export class MessagesComponent implements OnInit {
 
   ngOnInit() {
     this.remote.GetAllMessages().subscribe((data) => {
-      
       this.messages = data;
-     
-    })
+     })
   }
 
   getMessagesAgain(){

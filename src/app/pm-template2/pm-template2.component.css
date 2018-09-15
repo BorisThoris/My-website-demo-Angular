@@ -1,0 +1,62 @@
+#properMessageTemplate{
+    width:1330px;
+    margin: 20px auto;
+    height:380px;
+    background-color:white;
+    display:flex;
+    border: 2px solid #000;
+    border-radius:      px/100px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* User Info */
+#userPic{
+    right:-15px;
+    position:relative;
+    margin:20px 20px;
+    width:auto;
+    border-radius:5%;
+    border-color:black;
+    border-style:solid;
+    border-width:3px;
+} 
+
+#username{
+    position:relative;
+    height:50px;
+    width:210px;
+    text-align:center;
+    bottom:-170px;
+    left:-190px;
+}
+
+/* Message Content */
+#message{
+    position:relative;
+    left:-185px;
+    background-color:white;
+    margin: 20px 2px;
+    border-radius: 1%;
+    border-color:black;
+    border-style: groove;
+    width:1085px;
+    height:320px;
+}
+
+#date{
+    position:relative;
+    bottom:-335px;
+    top:335px;
+    left:-418px;
+    height:50px;
+    text-align:center;
+}
+
+#dateLegend{
+    width:230px;
+}
+
+#messageContent{
+    word-wrap: break-word; 
+}
