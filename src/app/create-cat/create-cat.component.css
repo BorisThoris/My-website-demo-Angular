@@ -34,11 +34,10 @@ width:430px;
 #catPiture{
     height:500px;
     width:580px;
-    display:inline-block;
+    display:relative;
     margin: 30px 150px;
     border-radius:5%;
     text-align:center;
-    
 }
     
 #imagePreview2{
@@ -47,7 +46,7 @@ width:430px;
     background-color:white;
     padding: 10px;
     display:inline-block;
-    transition: 0.7s;
+    animation: popIn 0.6s linear;
 }
 
 /* Age */
@@ -196,6 +195,8 @@ select { width: 400px; text-align-last:center; }
     transform: rotate(180deg);
     margin: 10px 10px;
     cursor: pointer;
+    min-height:110px;
+    min-width:200px;
 }
 
 #arrowLeft:hover{
@@ -210,6 +211,8 @@ select { width: 400px; text-align-last:center; }
     right:-380px;
     margin: 10px 10px;
     cursor: pointer;
+    min-height:110px;
+    min-width:200px;
 }
 
 #arrowRigth:hover{
@@ -233,7 +236,21 @@ transform: scale(1.12);
   -webkit-box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
+
     
+/* Animations */
+@keyframes popIn
+{ 
+    0%{
+        opacity:0;
+        transform: translate(0px, 10px);
+    } 
+    100%{
+        opacity:100;
+        
+    }
+
+}
 
     
 

@@ -73,13 +73,12 @@ export class CreateCatComponent implements OnInit {
   }
       
 
-
-
-
-
-
-
   //SLIDER
+  //ON ERROR
+  standby(){
+    this.toastr.info("Incorrect image link!")
+  }
+
   //INDEX LOGIC
   right(){ func:{
     let index = this.imgIndex;
