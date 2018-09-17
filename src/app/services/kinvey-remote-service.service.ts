@@ -56,7 +56,7 @@ export default class KinveyRemoteServiceService {
   //REGISTER
   register(username, password, profilePic){
     //POST /user/:appKey/ HTTP/1.1
-    let obj = { username, password, profilePic:"https://www.petcentric.com/media/356972/05_catpaw.jpg?width=500&height=333"};
+    let obj = { username, password, profilePic:"https://boygeniusreport.files.wordpress.com/2016/05/scared-surprised-cat-face.jpg?quality=98&strip=all&w=782"};
     let url = kinveyBaseUrl + 'user' + "/" + appKey + "/";
     let data = obj;
     return (this.post(url, data, 'basic'));
@@ -91,9 +91,9 @@ export default class KinveyRemoteServiceService {
   }
 
   //CREATE CAT
-  CreateCat(name, breed, age, contactNumber, information, imgUrl, vaccinated, castrated, city) {
+  CreateCat(name, breed, age, contactNumber, information, imgUrl, imgUrl2, imgUrl3, imgUrl4, vaccinated, castrated, city) {
     // /appdata/:appKey/:collectionName HTTP/1.1
-    let obj = { name, breed, age, contactNumber, information, imgUrl, vaccinated, castrated, city};
+    let obj = { name, breed, age, contactNumber, information, imgUrl, imgUrl2, imgUrl3, imgUrl4, vaccinated, castrated, city};
     let url = kinveyBaseUrl + 'appdata' + "/" + appKey + "/" + "Cats";
     let data = obj;
     return (this.post(url, data, 'kinvey'));

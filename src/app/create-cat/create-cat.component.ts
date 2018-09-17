@@ -32,12 +32,15 @@ export class CreateCatComponent implements OnInit {
     this.url = this.model.imgUrl;
    }
 
-  test(){
+  createCat(){
     //VARIABLES
     let name = this.model.name;
     let age = this.model.age;
     let contactNumber = this.model.contactNumber;
-    let imgUrl = this.model.imgUrl
+    let imgUrl = this.model.imgUrl;
+    let imgUrl2 = this.model.imgUrl2;
+    let imgUrl3 = this.model.imgUrl3;
+    let imgUrl4 = this.model.imgUrl4;
     let breed = this.model.breed;
     let information = this.model.information;
     let vaccinated = this.model.vaccinated;
@@ -58,7 +61,7 @@ export class CreateCatComponent implements OnInit {
     //CAT CREATION
     else{
         this.toastr.info("Creating Cat");
-        this.remote.CreateCat(name,breed,age,contactNumber,information,imgUrl,vaccinated, castrated, city).subscribe((data) => {
+        this.remote.CreateCat(name,breed,age,contactNumber,information,imgUrl, imgUrl2, imgUrl3, imgUrl4,vaccinated, castrated, city).subscribe((data) => {
         this.router.navigate(["viewAll"])
         this.toastr.success("Cat Created Succesfully!");
       }, (error: any) => {
