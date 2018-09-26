@@ -1,9 +1,45 @@
 <div class="card" id="catCard">
-  <h3 id="name">{{cat.name}}<a *ngIf="isCreator()">✔</a></h3>
-  <img src= {{cat.imgUrl}} id="catPic" alt="Smiley face" height="200" width="260">
-  <legend id="breed">Breed: {{cat.breed}}</legend>
-  <legend id="age">{{cat.age}} Year/s Old</legend>
-  <button type="button" (click)="loadInfo()" id="buttonCardCat" class="btn btn-success">More Info</button>
-</div> 
+
+  <div id="titleWrapper">
+    <h3 id="name">{{cat.name}}<a *ngIf="isCreator()">✔</a></h3>
+  </div>
+
+  <div id="generalWrapper">
+    <!--Picture-->
+    <div id="catPic">
+        <div id="overlayLeft" (click)="funcMove('left')">←</div>
+
+        <img *ngIf="is1()" id="picture" src= {{cat.imgUrl}}  alt="Smiley face" height="200" width="260">
+        <img *ngIf="is2()" id="picture" src= {{cat.imgUrl2}}  alt="Smiley face " height="200 " width="260 ">
+        <img *ngIf="is3()" id="picture" src= {{cat.imgUrl3}}  alt="Smiley face " height="200 " width="260 ">
+        <img *ngIf="is4()" id="picture" src= {{cat.imgUrl4}}  alt="Smiley face " height="200 " width="260 ">
+
+        <div id="overlayRight" (click)="funcMove('right')">→</div>
+    </div>
+
+    <!--Information-->
+    <div id="wrapperInfo">
+      <textarea id="information" class="form-control" rows="6" >{{cat.information}}</textarea>
+    </div>
+  </div>
+
+  <div id="etcWrapper">
+    <div id="age">Години:<br/>{{cat.age}}</div>
+    <div id="breed">Порода:<br/>{{cat.breed}}</div>
+    <div id="location">Област:<br/>{{cat.city}}</div>
+  </div>
+  
+  <div id="etc2Wrapper">
+    <div *ngIf="isCastrated()" id="cas">Кастрирана</div>
+
+    <!--Button-->
+    <button type="button" id="infoButton" class="btn btn-success">Информация</button>
+
+    <div *ngIf="isVaccinated()" id="vac">Ваксинирана</div>
+  </div>
+  
 
   
+</div> 
+
+

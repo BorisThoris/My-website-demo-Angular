@@ -38,7 +38,8 @@ font-weight:900;
 #catTitle{
     font-size:50px;
     position:relative;
-    left:-50px; 
+    left:160px; 
+    width:400px;
 }
     
 #picture1{
