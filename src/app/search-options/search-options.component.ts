@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { Cat } from '../cat';
 @Component({
   selector: 'app-search-options',
@@ -7,11 +7,24 @@ import { Cat } from '../cat';
 })
 export class SearchOptionsComponent implements OnInit {
   model:Cat;
+  options: object;
+  @Output() searchEvent = new EventEmitter<object>();
+
+  //CONSTRUCTOR
   constructor() {
     this.model = new Cat("","",0,null,null,null, null, null, null)
-   }
-  test(){console.log(this.model)}
-  ngOnInit() {
+  }
+  
+  
+  
+  //FUNCTIONS
+  test(){
+    console.log("1");
+    this.options = this.model;
+    this.searchEvent.emit(this.options);
+  }
+  
+  ngOnInit(){
   }
 
 }

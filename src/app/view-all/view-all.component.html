@@ -1,6 +1,6 @@
 <div id="pageInfo">
   <div id="viewAllForm">
-    <app-search-options></app-search-options>
+    <app-search-options (searchEvent)="receiveSearch($event)"></app-search-options>
     <div class="jumbotron" id="listView">
       <app-cat-card *ngFor="let c of cats" [cat]="c"></app-cat-card>
     </div>

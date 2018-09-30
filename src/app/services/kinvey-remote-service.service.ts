@@ -127,7 +127,6 @@ export default class KinveyRemoteServiceService {
   //GET ALL CATS
   GetAllCats() {
     // /appdata/:appKey/:collectionName HTTP/1.1
-    // return remote.get('appdata', "Products", 'kinvey');
     let url = kinveyBaseUrl + 'appdata' + "/" + appKey + "/" + "Cats";
     return (this.get(url, 'kinvey'));
   }

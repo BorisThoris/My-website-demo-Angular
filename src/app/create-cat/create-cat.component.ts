@@ -47,7 +47,7 @@ export class CreateCatComponent implements OnInit {
     let castrated = this.model.castrated;
     let city = this.model.city;
     //VALIDATION
-    if(name === "" || breed === "" || age <= 0 || contactNumber <0 || information === "" || imgUrl === ""){
+    if (name === "" || breed === "" || age <= 0 || contactNumber < 0 || information === "" || imgUrl === "" || imgUrl2 === "" || imgUrl3 === "" || imgUrl4 === ""){
       this.toastr.error("Fields Should Not Be Empty!");
     }else if(information.length>380){
       this.toastr.error("Information Should Be Less!");}
@@ -152,7 +152,7 @@ export class CreateCatComponent implements OnInit {
       "Кимрик",
       "Регдол",
       "Турска ангорска котка",
-      "Сибирка котка",
+      "Сибирска котка",
       "Сомалийска котка",
       "Руска синя котка",
       "Бурманска котка",
@@ -160,9 +160,8 @@ export class CreateCatComponent implements OnInit {
       "Бирманска котка",
       "Абисинска котка",
       "Персийска котка",
-      "Класификация на котките",
     ];  
-    this.cities = ["София", "lol town"]
+    this.cities = ["Благоевград", "Бургас", "Варна", "Велико Търново", "Видин", "Враца", "Габрово", "Добрич", "Кърджали", "Кюстендил", "Ловеч", "Монтана", "Пазарджик", "Перник", "Плевен", "Пловдив", "Разград", "Русе", "Силистра", "Сливен", "Смолян", "София", "Стара Загора", "Търговище", "Хасково", "Шумен", "Ямбол" ]
     this.model.city ="София";
     this.model.breed ="Улична";
     this.imgIndex = 1;

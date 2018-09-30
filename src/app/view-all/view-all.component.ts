@@ -8,13 +8,16 @@ import { EventEmitter } from 'events';
   templateUrl: './view-all.component.html',
   styleUrls: ['./view-all.component.css']
 })
-
 export class ViewAllComponent implements OnInit {
-  
   cats
   
   constructor(private remote: remote) { }
-  
+  searchOptions: object;
+
+  receiveSearch($event) {
+    this.searchOptions = $event
+    console.log(this.searchOptions);
+  }
 
 
   ngOnInit() {
