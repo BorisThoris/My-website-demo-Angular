@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { Cat } from '../cat';
 import remote from "../services/kinvey-remote-service.service.js";
-import { EventEmitter } from 'events';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-view-all',
@@ -10,16 +10,19 @@ import { EventEmitter } from 'events';
 })
 export class ViewAllComponent implements OnInit {
   cats
+  searchOptions: object;
   
   constructor(private remote: remote) { }
-  searchOptions: object;
-
+ 
   receiveSearch($event) {
     this.searchOptions = $event
     console.log(this.searchOptions);
   }
 
-
+  numberCats($event){
+    console.log($event);
+  }
+  
   ngOnInit() {
     this.remote.GetAllCats().subscribe((data)=>{
       this.cats = data;

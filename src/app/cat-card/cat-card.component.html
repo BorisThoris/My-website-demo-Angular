@@ -1,4 +1,4 @@
-<div class="card" id="catCard">
+<div  *ngIf=isSorted() class="card" id="catCard">
 
   <div id="titleWrapper">
     <h3 id="name">{{cat.name}}<a *ngIf="isCreator()">✔</a></h3>
@@ -31,15 +31,11 @@
   
   <div id="etc2Wrapper">
     <div *ngIf="isCastrated()" id="cas">Кастрирана</div>
-
     <!--Button-->
-    <button type="button" id="infoButton" class="btn btn-success">Информация</button>
-
+    <button type="button" id="infoButton" (click)="loadInfo()" class="btn btn-success">Информация</button>
     <div *ngIf="isVaccinated()" id="vac">Ваксинирана</div>
   </div>
-  
 
-  
 </div> 
 
 

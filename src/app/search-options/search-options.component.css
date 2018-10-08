@@ -38,15 +38,13 @@ transform: scale(1.15);
     text-align:center;
     
 }
-input[type='number']::-webkit-inner-spin-button, 
-input[type='number']::-webkit-outer-spin-button { 
-    -webkit-appearance: none;
-    margin: 0;
-}
+
 #age{
-    width:160px;
     margin:5px 10px;
-    display:inline-block;
+    flex-direction: column;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
     
 

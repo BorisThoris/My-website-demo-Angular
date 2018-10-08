@@ -2,25 +2,100 @@
 <form #form="ngForm">
 <div id="wrapper">
   <!--Picture-->
-  <img id="catImg" src= {{this.model.imgUrl}} alt="Smiley face" height="600px" width="800px">
-
-  <!--Options-->
-  <div class="card" id="sadBox2">
-    <div class="card-body">
-      <legend id="genText">Name:<textarea class="form-control" id="NameArea" rows="1" required [(ngModel)]="model.name" name="name"></textarea></legend>
-      <legend id="genText">Breed:<textarea class="form-control" id="BreedArea" rows="1" required [(ngModel)]="model.breed" name="breed"></textarea></legend>
-      <legend id="number">Number:<textarea class="form-control" id="NumberArea" rows="1" required [(ngModel)]="model.contactNumber" name="contactNumber"></textarea></legend>
-      <legend id="age">Age:<textarea class="form-control" id="AgeArea" rows="1" required [(ngModel)]="model.age" name="age"></textarea></legend>
-      <legend id="info">info: <textarea class="form-control" id="infoArea" rows="2" required [(ngModel)]="model.information" name="information"></textarea></legend>
-      <legend id="img">Img:<textarea class="form-control" id="AgeArea" rows="1" required [(ngModel)]="model.imgUrl" name="imgUrl"></textarea></legend>
-      <button type="button" (click)="testFunc()" class="btn btn-success" id="changeButton">Change</button>
-      <button type="button" class="btn btn-info" (click)="sendMessageFunc()" id="sendPmButton">Send Message </button>
-      <button type="button" (click)="deleteFunc()" class="btn btn-danger" id="dangerButton">Delete</button>
+  
+  <!--Picture Preview-->
+  <div id="catPiture">
+    <legend>Преглед На Снимки</legend>
+    <a *ngIf="is1()"><img src= {{model.imgUrl}} id="imagePreview2" height="500" width="580" alt="Неправилен link"></a>
+    <a *ngIf="is2()"><img src= {{model.imgUrl2}} id="imagePreview2" height="500" width="580" alt="Неправилен link"></a>
+    <a *ngIf="is3()"><img src= {{model.imgUrl3}} id="imagePreview2" height="500" width="580" alt="Неправилен link"></a>
+    <a *ngIf="is4()"><img src= {{model.imgUrl4}} id="imagePreview2" height="500" width="580" alt="Неправилен link"></a>
+    <div id="arrowWrapper">
+      <img (click)="right()" src="http://oi68.tinypic.com/1q1seo.jpg" id="arrowRigth" height="110" width="200" alt="catProfilePic">
+      <legend id="indexNumber">{{imgIndex}}</legend>
+      <img (click)="left()" src="http://oi68.tinypic.com/1q1seo.jpg" id="arrowLeft" height="110" width="200" alt="catProfilePic">
     </div>
   </div>
 
+  <!--Options-->
+  <div class="card" id="sadBox2">
+    <div id="infoUpperHalf">
+      <div id="divsWrapperLeft">
+
+        <!--Title-->
+        <legend id="titleMain">Заглавие
+          <textarea class="form-control" id="NameArea" rows="1" required [(ngModel)]="model.name" name="name"></textarea>
+        </legend>
+
+        <!--Age-->
+        <legend id="age">Възраст години
+          <input  id="AgeArea" required [(ngModel)]="model.age" name="age">
+        </legend>
+
+        <!--Number-->
+        <legend id="age">Номер За Връзка
+          <input id="NumberArea" required [(ngModel)]="model.contactNumber" name="contactNumber">
+        </legend>
+        
+        <legend id="breedMain">Порода
+          <select id="BreedArea" rows="1" required [(ngModel)]="model.breed" name="breed">
+            <option *ngFor="let b of breeds" [value]="b">{{b}}</option>
+          </select>
+        </legend>
+
+        <!--City-->
+        <legend id="cityMain">Регион
+          <select id="cityArea" rows="1" required [(ngModel)]="model.city" name="breed">
+            <option *ngFor="let c of cities" [value]="c">{{c}}</option>
+          </select>
+        </legend>
+      </div>
+
+      <!--Information-->
+      <legend id="info">info
+        <textarea class="form-control" id="infoArea" required [(ngModel)]="model.information" name="information"></textarea>
+      </legend>
+
+    </div>
+
+    <div id= "breedAndCity">
+
+        <!--Castrated-->
+        <div id="Castrated">Кастрирана
+          <div class="form-check">
+            <input class="form-check-input" id="castrated2" type="checkbox" value="" checked="" required [(ngModel)]="model.castrated"
+              #imgUrl="ngModel" name="castrated">
+          </div>
+        </div>
+        
+        <!--Vaccinated-->
+        <div id="Vaccinated">Ваксинирана
+          <div class="form-check">
+            <input class="form-check-input" id="vaccinated2" type="checkbox" value="" checked="" required [(ngModel)]="model.vaccinated"
+              #imgUrl="ngModel" name="vaccinated">
+          </div>
+        </div>
+
+    </div>
+        
+      <!--IMG Links-->
+      <legend id="imgTitles">Линкове За Снимки</legend>
+      <legend id="imgMain"><textarea class="form-control" id="img" rows="1" required [(ngModel)]="model.imgUrl" name="imgUrl"></textarea></legend>
+      <legend id="imgMain"><textarea class="form-control" id="img" rows="1" required [(ngModel)]="model.imgUrl2" name="imgUrl2"></textarea></legend>
+      <legend id="imgMain"><textarea class="form-control" id="img" rows="1" required [(ngModel)]="model.imgUrl3" name="imgUrl3"></textarea></legend>
+      <legend id="imgMain"><textarea class="form-control" id="img" rows="1" required [(ngModel)]="model.imgUrl4" name="imgUrl4"></textarea></legend>
+
+      <!--Buttons-->
+      <div *ngIf="isAuth(); else elseBlock" id="buttonWrapper">
+        <button  type="button" (click)="testFunc()" class="btn btn-success" id="changeButton">Change</button>
+        <button  type="button" (click)="deleteFunc()" class="btn btn-danger" id="dangerButton">Delete</button>
+      </div>
+
+      <ng-template #elseBlock id="buttonWrapper"> 
+        <button type="button" class="btn btn-info" (click)="sendMessageFunc()" id="sendPmButton">Send Message</button>
+      </ng-template>
+
+  </div>
 </div>
 </form>
     
-
-

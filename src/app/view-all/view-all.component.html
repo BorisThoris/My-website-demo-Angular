@@ -2,30 +2,7 @@
   <div id="viewAllForm">
     <app-search-options (searchEvent)="receiveSearch($event)"></app-search-options>
     <div class="jumbotron" id="listView">
-      <app-cat-card *ngFor="let c of cats" [cat]="c"></app-cat-card>
+      <app-cat-card [searchOptions2]="searchOptions" (numberOfCats)="numberCats($event)" *ngFor="let c of cats" [cat]="c"></app-cat-card>
     </div>
   </div>
 </div>
-  
-  
-  
-      
-    
-    
-  
-  
-     
-      
-        
-    
-        
-        
-        
-        
-        
-        
-
-  
-  
-
-

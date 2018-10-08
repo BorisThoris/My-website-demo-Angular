@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { Cat } from '../cat';
 import remote from "../services/kinvey-remote-service.service.js";
-import { EventEmitter } from 'events';
+import { EventEmitter } from '@angular/core';
 import { Router } from '@angular/router'
 
 @Component({
@@ -11,25 +11,28 @@ import { Router } from '@angular/router'
 })
 export class CatCardComponent implements OnInit {
   @Input() cat: Cat;
+  @Input() searchOptions2:object;
+  @Output() numberOfCats = new EventEmitter<object>();
     picUrl;
     index;
     information;
     
     constructor(private router: Router) {
-   
-    }
-
+   }
+  
   ngOnInit() {
     this.index=1;
     this.picUrl=this.cat.imgUrl;
-  }
-d
-  loadInfo(){
-    this.information = this.cat.information;
-    let id = this.cat._id;
-    this.router.navigate(['/view-cat/' + id])
+    console.log(this.searchOptions2);
   }
   
+  loadInfo(){
+  this.information = this.cat.information;
+  let id = this.cat._id;
+  this.router.navigate(['/view-cat/' + id])
+  }
+  
+  //VALIDATION TESTS  
   isCastrated(){
     if(this.cat.castrated){
       return true;
@@ -51,7 +54,29 @@ d
   }
 
 
-  //SLIDER
+  //SORTING OPTIONS
+  isSorted(){
+    let searchAge = this.searchOptions2['age'];
+    let castrated = this.searchOptions2['castrated'];
+    let vaccinated = this.searchOptions2['vaccinated'];
+    let breed = this.searchOptions2['breed'];
+    let city = this.searchOptions2['city'];
+
+    if(city==="Всички" && breed==="Всички")
+    {
+      if (this.cat.age >= searchAge && this.cat.castrated === castrated && this.cat.vaccinated === vaccinated){
+        return true}  
+    }
+    else if (city==="Всички"){
+      if (this.cat.age >= searchAge && this.cat.castrated === castrated && this.cat.vaccinated === vaccinated && this.cat.breed === breed){ 
+        return true }
+    }
+
+
+    //if (this.cat.age >= searchAge && this.cat.castrated === castrated && this.cat.vaccinated === vaccinated && this.cat.breed === breed && this.cat.city===city){return true}
+  }
+
+  //SLIDER FUNC
   funcMove(input){
     let index = this.index;
     if(input==='left'){
@@ -74,12 +99,10 @@ d
         this.index++;
       }
     }
-      
-    
   }
   
 
-  //CONDITIONS
+  //SLIDER CONDITIONS
   is1() {
     let index = this.index;
     if (index === 1) {

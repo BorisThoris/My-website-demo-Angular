@@ -1,45 +1,199 @@
+/* ENTIRE WRAPPER */
+#wrapper{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
 
-#sadBox2{
-width:500px;
-height:auto;
-margin:20px;
-float:right;
-background-color:white;
 }
 
-#genText{
-    text-align:left
+/* INFORMATION DIV */
+#sadBox2{
+width:570px;
+height:auto;
+padding:10px;
+border-width:4px;
+margin:40px 0px;
 }
 
 #textsArea{
     resize: none;
 }
 
+/* TITLE AND OTHERS WRAPPER */
+#divsWrapperLeft{
+    width:180px;
+}
+
+#infoUpperHalf{
+    display:flex;
+    margin:auto;
+}
+
+/* WRAPPER VACINATED CASTRATED */
+#wrapCasAndVac{
+    display:flex;
+    flex-direction: column;
+    margin:3px auto;
+}
+
+/* CASTRATED */
+#Castrated{
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    width:180px;
+    font-size:23px;
+}
+
+#castrated2{
+    margin:auto;
+}
+
+/* VACCINATED */
+#Vaccinated{
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    width:180px;
+    font-size:23px;
+}
+
+#vaccinated2{
+    margin:auto;
+}
+
+/* TITLE - ignore wrong name for css selector */
+#titleMain{
+    width: 180px;
+    font-size:25px;
+    float:left;
+    text-align:center;
+}
+
 #NameArea{
-    resize: none;
+   width:180px;
+   resize:none;
+   color:black;
+   font-size:25px;
+   text-align:center;
+}
+
+/* BREED AND CITY WRAPPER */
+#breedAndCity{
+    display:flex;
+    flex-direction:row;
+    margin:auto;
+    justify-content:space-between;
+}
+
+/* BREED */
+#breedMain{
+    width:180px;
+    text-align:center;
 }
 
 #BreedArea{
-    resize: none;
+    width:180px;
+    border-color:black;
+    border-width:2px;
 }
 
+select {
+display: block;
+margin: 0 auto;
+}
+
+
+/* CITY */
+#cityMain{
+    width:180px;
+    text-align:center;
+}
+
+#cityArea{
+    width:180px;
+    border-color:black;
+    border-width:2px;
+    text-align:center;
+}
+
+/* NUMBER */
 #NumberArea{
-    resize: none;
+    border-color:black;
+    border-width:2px;
+    width:180px;
+    font-size:30px;
+    text-align:center;
 }
 
+
+/* AGE */
+#age{
+    text-align: center;
+    width:180px;
+    font-size:25px;
+}
 #AgeArea{
+    font-size:25px;
+    text-align: center;
     resize: none;
+    width:180px;
+    border-color:black;
+    border-width:2px;
 }
 
-#InfoArea{
-    resize: none;
-}
-
-#dangerButton{
+/* DESCRIPTION / INFORMATION */
+#info{
+    text-align: center;
     float:right;
-    margin:10px;
+    margin: 0px 10px;
+    width:280px;
+    height:380px;
+    font-size:25px;
+}
+#infoArea{
+    resize: none;
+    height:440px;
+    font-size:25px;
+}
+
+/* IMG WRAPPER */
+#imgTitles{
+    text-align:center;
+}
+
+#imgMain{
+    resize:none;
+    text-align:center;
+    width:460px;
+    margin:10px auto;
+    background-color:red;
+}
+
+
+#img{
+    resize:none;
+    height:45px;
+}
+
+/* BUTTON WRAPPER */
+#buttonWrapper{
+    display:flex;
+    justify-content: space-between;
+    margin:15px auto;
+}
+
+/* DELETE BUTTON */
+#dangerButton{
     border-width:2px;
     border-color:black;
+    margin: 0px 50px;
 }
 
 #dangerButton:hover{
@@ -50,36 +204,25 @@ transform: scale(1.20);
   box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6); 
 }
 
+/* CHANGE BUTTON */
 #changeButton{
-    margin:10px;
     border-width:2px;
     border-color:black;
+    margin: 0px 50px;
 }
 
 #changeButton:hover{
 transform: scale(1.20);
   outline: 0;
   -webkit-box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-  box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-  
+  box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6); 
 }
 
-#catImg{
-    border-radius:10%;
-    border-style:solid;
-    border-color:black;
-    margin: 60px 20px;
-    display:inline-block;
-    background-color:white;
-    border-radius:10%;
-    border-width:4px;
-}
-
-
+/* PM BUTTON */
 #sendPmButton{
+    margin: 15px 20px;
+    width:250px;
     margin:auto;
-    position:relative;
-    right: -50px;
     border-width:2px;
     border-color:black;
 }
@@ -91,7 +234,95 @@ transform: scale(1.20);
   box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
 
-#wrapper{
-    width: 95%;
-    margin: 0 auto;
+
+/*SLIDER*/
+/* Picture */
+#catPiture{
+    float:left;
+    height:670px;
+    width:580px;
+    display:relative;
+    margin: 30px 50px;
+    border-radius:5%;
+    text-align:center;
+    margin:0px 150px;
 }
+    
+#imagePreview2{
+    border-style:solid;
+    border-radius:5%;
+    background-color:white;
+    display:inline-block;
+    animation: popIn 0.6s linear;
+}
+
+/* Arrow Left */
+#arrowLeft{
+    display:inline-block;
+    position:relative;
+    left:-380px;
+    transform: rotate(180deg);
+    margin: 10px 10px;
+    cursor: pointer;
+    min-height:110px;
+    min-width:200px;
+}
+
+#arrowLeft:hover{
+    transform:scale(1.18) rotate(180deg);
+    transition: 0.7s;
+}
+    
+/* Arrow Rigth */
+#arrowRigth{
+    display:inline-block;
+    position:relative;
+    right:-380px;
+    margin: 10px 10px;
+    cursor: pointer;
+    min-height:110px;
+    min-width:200px;
+}
+
+#arrowRigth:hover{
+    transform:scale(1.18);
+    transition: 0.7s;
+}
+
+/*arrowWrapper */
+#arrowWrapper{
+    display:flex;
+}
+
+#indexNumber{
+    font-size:100px;
+}
+
+#buttonCreatePost:hover{
+transform: scale(1.12);
+  outline: 0;
+  -webkit-box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 5px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+    
+/* Animations */
+@keyframes popIn
+{ 
+    0%{
+        opacity:0;
+        transform: translate(0px, 10px);
+    } 
+    100%{
+        opacity:100;
+        
+    }
+
+}
+
+    
+
+
+
+
+    
