@@ -102,13 +102,8 @@ margin:40px 0px;
     width:180px;
     border-color:black;
     border-width:2px;
+    text-align-last:center;
 }
-
-select {
-display: block;
-margin: 0 auto;
-}
-
 
 /* CITY */
 #cityMain{
@@ -120,8 +115,9 @@ margin: 0 auto;
     width:180px;
     border-color:black;
     border-width:2px;
-    text-align:center;
+    text-align-last:center;
 }
+
 
 /* NUMBER */
 #NumberArea{
@@ -176,6 +172,15 @@ margin: 0 auto;
     background-color:red;
 }
 
+#holder{
+    transition: 0.6s;
+}
+
+#holder:hover{
+    transform:scale(1.15);
+    transition: 0.6s;
+    display:inline-block;
+}
 
 #img{
     resize:none;

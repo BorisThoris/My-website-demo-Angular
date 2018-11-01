@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import remote from "../services/kinvey-remote-service.service.js";
 import { Cat } from '../cat';
@@ -17,6 +17,19 @@ export class ViewCatInfoComponent implements OnInit {
   breeds;
   cities;
 
+  @ViewChild('name') name: ElementRef;
+  @ViewChild('age') age: ElementRef;
+  @ViewChild('number') number: ElementRef;
+  @ViewChild('breed') breed: ElementRef;
+  @ViewChild('city') city: ElementRef;
+  @ViewChild('info') info: ElementRef;
+  @ViewChild('castrated') castrated: ElementRef;
+  @ViewChild('vaccinated') vaccinated: ElementRef;
+  @ViewChild('link') link: ElementRef;
+  @ViewChild('link') link2: ElementRef;
+  @ViewChild('link') link3: ElementRef;
+  @ViewChild('link') link4: ElementRef;
+
   constructor(private route: ActivatedRoute, private remote: remote, private router: Router, private toastr: ToastrService) {
     this.model = new Cat("", "", 0, 0, "", "", "","", "");
    }
@@ -34,7 +47,22 @@ export class ViewCatInfoComponent implements OnInit {
       if (localStorage.getItem("isAdmin") === "Yes" || acl === userId) {
         return (true);
       } 
-      else return(false);
+      else{
+        this.name.nativeElement.setAttribute('disabled', ''); 
+        this.age.nativeElement.setAttribute('disabled', ''); 
+        this.number.nativeElement.setAttribute('disabled', '');
+        this.breed.nativeElement.setAttribute('disabled', '');
+        this.city.nativeElement.setAttribute('disabled', '');
+        this.info.nativeElement.setAttribute('disabled', '');
+        this.castrated.nativeElement.disabled = true;
+        this.vaccinated.nativeElement.disabled = true;
+        this.link.nativeElement.setAttribute('disabled', '');
+        this.link2.nativeElement.setAttribute('disabled', '');
+        this.link3.nativeElement.setAttribute('disabled', '');
+        this.link4.nativeElement.setAttribute('disabled', '');
+        
+        return(false);
+      }
     }
     
     //DELETING CAT
@@ -162,26 +190,6 @@ export class ViewCatInfoComponent implements OnInit {
     
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
-    //UGLY PASSING DATA FROM DB
-    this.remote.GetCatById(id).subscribe((data) => {
-      this.Cat = data;
-      this.model.city = this.Cat.city;
-      this.model.breed = this.Cat.breed;
-      this.model.name = this.Cat.name;
-      this.model.contactNumber = this.Cat.contactNumber;
-      this.model.age = this.Cat.age;
-      this.model.information = this.Cat.information;
-      this.model.imgUrl = this.Cat.imgUrl;
-      this.model.imgUrl2 = this.Cat.imgUrl2;
-      this.model.imgUrl3 = this.Cat.imgUrl3;
-      this.model.imgUrl4 = this.Cat.imgUrl4;
-      this.model._acl = this.Cat._acl;
-      this.model.castrated = this.Cat.castrated;
-      this.model.vaccinated = this.Cat.vaccinated;
-      this.imgIndex = 1;
-    })
-
     this.breeds = [
       "Улична",
       "Девон рекс",
@@ -208,11 +216,34 @@ export class ViewCatInfoComponent implements OnInit {
       "Персийска котка",
     ];
     this.cities = ["Благоевград", "Бургас", "Варна", "Велико Търново", "Видин", "Враца", "Габрово", "Добрич", "Кърджали", "Кюстендил", "Ловеч", "Монтана", "Пазарджик", "Перник", "Плевен", "Пловдив", "Разград", "Русе", "Силистра", "Сливен", "Смолян", "София", "Стара Загора", "Търговище", "Хасково", "Шумен", "Ямбол"]
+    const id = this.route.snapshot.paramMap.get('id');
+    //UGLY PASSING DATA FROM DB
+    this.remote.GetCatById(id).subscribe((data) => {
+      this.Cat = data;
+      this.model.city = this.Cat.city;
+      this.model.breed = this.Cat.breed;
+      this.model.name = this.Cat.name;
+      this.model.contactNumber = this.Cat.contactNumber;
+      this.model.age = this.Cat.age;
+      this.model.information = this.Cat.information;
+      this.model.imgUrl = this.Cat.imgUrl;
+      this.model.imgUrl2 = this.Cat.imgUrl2;
+      this.model.imgUrl3 = this.Cat.imgUrl3;
+      this.model.imgUrl4 = this.Cat.imgUrl4;
+      this.model._acl = this.Cat._acl;
+      this.model.castrated = this.Cat.castrated;
+      this.model.vaccinated = this.Cat.vaccinated;
+      this.imgIndex = 1;
+      
+      this.remote.GetUserById(this.model._acl.creator.username).subscribe((data)=>{
+        console.log(data);
+      })
+    })
+    }
   }
-}
-      
-       
-      
+  
+  
+  
         
 
         
