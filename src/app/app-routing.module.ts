@@ -18,7 +18,7 @@ import { InboxComponent } from './inbox/inbox.component'
 import { IncorrectPageComponent } from './incorrect-page/incorrect-page.component'
 import { PmViewComponent } from './pm-view/pm-view.component'
 import { PmWriterComponent } from './pm-writer/pm-writer.component'
-
+import { RocketsPageComponent } from './rockets-page/rockets-page.component'
 
 
 
@@ -40,6 +40,7 @@ const routes : Routes = [
   { path: 'Inbox', component: InboxComponent },
   { path: 'pm-view/:id', component: PmViewComponent },
   { path: 'pm-create/:id', component: PmWriterComponent },
+  { path: 'rockets_page', component: RocketsPageComponent },
   { path: '**', component: IncorrectPageComponent }
 
   

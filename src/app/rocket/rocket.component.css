@@ -1,0 +1,67 @@
+
+#topHalf{
+  
+    position:relative;
+    width:65px;
+    height:66px;
+    background-image: url('./images/rocket_top.png');
+}
+#BottomHalf{
+    position:relative;
+    width:65px;
+    height:30px;
+    background-image: url('./images/rocket_bottom.png');
+    transition: 1;
+}
+#EngineFlame{
+    position:relative;
+    width:45px;
+    margin:auto;
+    height:90px;
+    background-image: url('./images/thrust.png');
+    animation: fontbulger 1s linear infinite;
+    transition:0.6s;
+}
+
+#EngineFlame.stage2{
+        
+    width:45px;
+    margin:auto;
+    height:90px;
+    background-image: url('./images/thrust.png');
+    animation: fontbulger 1s linear infinite;
+    transition:0.6s;
+    transform:translateY(-30px);
+}
+
+#Rocket{
+   
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width:66px;
+    animation: move 1.5s linear infinite;
+    top: 86%;
+    display: inline-block;
+    transition:3s linear;
+    margin:5px 60px;
+    background-color:red;
+}
+
+#Rocket.destroyed{
+    animation: destroyed 1.5s linear;
+    opacity: 0;
+    transition: 2.5s;
+}
+
+#BottomHalf.destroyed{
+    opacity:0; 
+    transform: translateY(30px);
+    transition: 1.5s;
+    
+}
+
+@keyframes fontbulger { 0%{opacity:1;} 25%{opacity:0.5} 50%{opacity:1} 75%{opacity:0.5} 100%{ opacity:1 } }
+@keyframes move { 0% {transform:rotate(2deg)} 50% { transform:rotate(-2deg)} 100% { transform:rotate(2deg)} } 
+@keyframes destroyed { 0% {transform:rotate(10deg)} 50% { transform:rotate(-10deg)} 100% { transform:rotate(10deg)} } 

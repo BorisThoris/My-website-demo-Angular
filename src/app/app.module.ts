@@ -33,6 +33,8 @@ import { IncorrectPageComponent } from './incorrect-page/incorrect-page.componen
 import { PmViewComponent } from './pm-view/pm-view.component';
 import { PmTemplate2Component } from './pm-template2/pm-template2.component';
 import { PmWriterComponent } from './pm-writer/pm-writer.component';
+import { RocketsPageComponent } from './rockets-page/rockets-page.component';
+import { RocketComponent } from './rocket/rocket.component';
 
 
 
@@ -63,6 +65,8 @@ import { PmWriterComponent } from './pm-writer/pm-writer.component';
     PmViewComponent,
     PmTemplate2Component,
     PmWriterComponent,
+    RocketsPageComponent,
+    RocketComponent,
     
     
     
