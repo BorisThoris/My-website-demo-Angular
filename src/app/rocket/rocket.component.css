@@ -8,6 +8,7 @@
 }
 #BottomHalf{
     position:relative;
+     margin: auto;
     width:65px;
     height:30px;
     background-image: url('./images/rocket_bottom.png');
@@ -42,11 +43,11 @@
     justify-content: center;
     width:66px;
     animation: move 1.5s linear infinite;
-    top: 86%;
+    
     display: inline-block;
     transition:3s linear;
     margin:5px 60px;
-    background-color:red;
+ 
 }
 
 #Rocket.destroyed{

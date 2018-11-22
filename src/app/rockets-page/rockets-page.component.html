@@ -1,6 +1,6 @@
 
-<div id="RocketsPage">
+<div #RocketsPage id="RocketsPage">
 
-  <app-rocket id="sad6" *ngFor="let r of rockets" [rocket]="r" ></app-rocket>
+  <app-rocket [maxFuel]="maxFuel"  *ngFor="let r of rockets"  [rocket]="r" ></app-rocket>
 
 </div>

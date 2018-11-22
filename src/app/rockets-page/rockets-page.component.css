@@ -2,30 +2,20 @@
     position:relative;
     display:flex;
     flex-grow: initial;
-    overflow:auto;
+    
     width:1700px;
-    height:1400px;
-    overflow:auto;
-
+    height: max-content;
     margin:auto;
     border-radius:5%;
     border-width:3px;
-    max-width:100%;
+    padding:10px;
     justify-content: center;
     border-style:solid;
-    
     background-image: url('./images/bg.jpg');
-    
+    background-size: 100% 100%;
 }
 
-#sad6{
-    position:relative;
-    background-color:white;
-    border-style:solid;
-    border-color:black;
-  
-    height:auto;
-}
+
 
 #rocketsWrapper{
     background-color:white;
