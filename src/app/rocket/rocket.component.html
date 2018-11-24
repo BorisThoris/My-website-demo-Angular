@@ -9,4 +9,7 @@
   <div #EngineFlame id="EngineFlame">
 
   </div>
+  <div *ngIf="firstStage()" id=Fuel>Stage One Fuel: {{this.fuelStageOne}}</div>
+  <div *ngIf="secondStage()" id=Fuel>Stage Two Fuel: {{this.fuelStageTwo}}</div>
+  <div *ngIf="thirdStage()" id=Fuel>No Fuel Left</div>
 </div>

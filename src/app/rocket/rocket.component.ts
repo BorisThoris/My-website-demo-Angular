@@ -1,5 +1,7 @@
 import { Component, Input, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { RocketClass } from '../rocket-class';
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
 @Component({
   selector: 'app-rocket',
   templateUrl: './rocket.component.html',
@@ -16,26 +18,26 @@ export class RocketComponent implements OnInit {
   fuelStageOne;
   fuelStageTwo;
   thick;
+  fuel;
   
   constructor() { }
 
   startRocketflying(rocket){
-    let fuelOne = parseFloat(rocket.first_stage.fuel_amount_tons);
-    let fuelTwo = parseFloat(rocket.second_stage.fuel_amount_tons);
-    this.thick = this.maxFuel + 60000;
+    let fuelOne = parseInt(rocket.first_stage.fuel_amount_tons);
+    let fuelTwo = parseInt(rocket.second_stage.fuel_amount_tons);
+    this.thick = this.maxFuel + 99900;
     this.fuelStageOne = fuelOne;
     this.fuelStageTwo = fuelTwo;
     this.maxFuel = this.maxFuel -1000;
     
-    var c = this.fuelStageOne;
     
     // ADJUST THE LAST VALUE FOR SPEED/ 1000 = 1 SECOND //
     var t = setInterval(() => { this.buringFuel(this.fuelStageOne, this.fuelStageTwo, this.thick, this.maxFuel, t); }, 500);
-    
+    window.scrollTo(0, 120000);
   }
 
   buringFuel(c, b, thick, maxFuel , t){ 
-   
+    this.fuel = Math.floor(this.fuelStageOne + this.fuelStageTwo) ;
     this.maxFuel--;
 
     console.log(this.maxFuel);
@@ -88,7 +90,25 @@ export class RocketComponent implements OnInit {
   
   }
 
+  firstStage(){
+    if(this.fuelStageOne>0){
+      return true;
+    }
+  }
   
+  secondStage(){
+    if(this.fuelStageTwo>0 && this.fuelStageOne<=0){
+      return true;
+    }
+  }
+
+  thirdStage(){
+    if(this.fuelStageTwo<=0){
+      return true;
+    }
+  }
+
+
   ngOnInit() {
     this.startRocketflying(this.rocket)
     

@@ -1,4 +1,11 @@
 
+#Fuel{
+    text-align:center;
+    color:red;
+    animation: fontbulger 4s linear infinite;
+    transition: 1s;
+}
+
 #topHalf{
   
     position:relative;
