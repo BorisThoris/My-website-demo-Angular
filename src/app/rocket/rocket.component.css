@@ -65,7 +65,6 @@
 
 #BottomHalf.destroyed{
     opacity:0; 
-    transform: translateY(30px);
     transition: 1.5s;
     
 }
