@@ -32,7 +32,7 @@ export class RocketComponent implements OnInit {
     
     
     // ADJUST THE LAST VALUE FOR SPEED/ 1000 = 1 SECOND //
-    var t = setInterval(() => { this.buringFuel(this.fuelStageOne, this.fuelStageTwo, this.thick, this.maxFuel, t); }, 20);
+    var t = setInterval(() => { this.buringFuel(this.fuelStageOne, this.fuelStageTwo, this.thick, this.maxFuel, t); }, 1000);
     window.scrollTo(0, 120000);
   }
 
