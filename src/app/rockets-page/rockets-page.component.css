@@ -2,8 +2,8 @@
     position:relative;
     display:flex;
     flex-grow: initial;
-    
-    width:1700px;
+    overflow:auto;
+    width:auto;
     height: max-content;
     margin:auto;
     border-radius:5%;
